@@ -45,7 +45,7 @@ export default function BuildingDetail() {
           {/* Fallback: show building icon if no section is open */}
           {activeSection === null && (
             <img
-              src={`/src/assets/img/${building.icon}.png`}
+              src={`/img/${building.icon}.png`}
               alt={building.name}
               className="w-full h-auto object-contain opacity-90"
             />

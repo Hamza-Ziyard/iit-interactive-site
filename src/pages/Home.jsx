@@ -37,9 +37,9 @@ export default function Home() {
         <div className="md:w-1/2 md:mt-0 h-full min-w-0">
           {/* add items-stretch and min-w-0 */}
           <div className="flex gap-6 w-full h-full items-stretch min-w-0 pt-8">
-            <img src="src/assets/img/guidelines-book.png" className='w-[200px] h-[650px] rounded-lg hover:scale-105 transition duration-150 ease-in-out' alt="" />
-            <img src="src/assets/img/roles-book.png" className='w-[200px] h-[650px] rounded-lg hover:scale-105 transition duration-150 ease-in-out'  alt="" />
-            <img src="src/assets/img/meet-team-book.png" className='w-[200px] h-[650px] rounded-lg hover:scale-105 transition duration-150 ease-in-out'  alt="" />
+            <img src="/img/guidelines-book.png" className='w-[200px] h-[650px] rounded-lg hover:scale-105 transition duration-150 ease-in-out' alt="" />
+            <img src="/img/roles-book.png" className='w-[200px] h-[650px] rounded-lg hover:scale-105 transition duration-150 ease-in-out'  alt="" />
+            <img src="/img/meet-team-book.png" className='w-[200px] h-[650px] rounded-lg hover:scale-105 transition duration-150 ease-in-out'  alt="" />
             {/* <Card title="Common Guidelines">
               <PlaceholderIcon className='w-[100px] h-[100px]' />
             </Card>
@@ -84,7 +84,7 @@ function PlaceholderIcon({ className = '' }) {
   return (
     // explicit size and object-contain to avoid forcing parent width
     <img
-      src="src/assets/img/guidelines.png"
+      src="/img/guidelines.png"
       alt="guidelines"
       className={`${className} object-contain h-24 w-24`}
     />
@@ -94,7 +94,7 @@ function PlaceholderIcon({ className = '' }) {
 function UsersCircleIcon({ className = '' }) {
   return (
     <img
-      src="src/assets/img/meet-team.png"
+      src="/img/meet-team.png"
       alt="meet the team"
       className={`${className} object-contain h-24 w-24`}
     />
@@ -104,7 +104,7 @@ function UsersCircleIcon({ className = '' }) {
 function ShieldIcon({ className = '' }) {
   return (
     <img
-      src="src/assets/img/roles.png"
+      src="/img/roles.png"
       alt="roles"
       className={`${className} object-contain h-24 w-24`}
     />

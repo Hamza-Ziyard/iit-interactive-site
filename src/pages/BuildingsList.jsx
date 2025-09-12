@@ -5,7 +5,7 @@ import { landmarks } from '../data/landmarks'
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
 import L from 'leaflet'
 import { MapPinIcon, ChevronRightIcon, ClockIcon } from '@heroicons/react/24/outline'
-import studentImg from '../assets/img/student.png'
+import studentImg from '/img/student.png'
 
 // Haversine formula to calculate distance between two coords
 function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
@@ -103,7 +103,7 @@ export default function BuildingsList() {
                 <div className="pl-3 pr-3 py-3">
                   <div className="flex gap-4">
                     <div className="w-24 py-4 rounded-xl bg-gradient-to-br from-gray-100 to-gray-100 ring-1 ring-gray-50">
-                      <img src={`/src/assets/img/${b.icon}.png`} alt={b.name} />
+                      <img src={`/img/${b.icon}.png`} alt={b.name} />
                     </div>
                     <div className="flex-1 pt-3 min-w-0">
                       <div className="flex items-start justify-between gap-4">
@@ -191,7 +191,7 @@ function LeafletMap({ selected, highlightedMarker, mapRef, onMarkerClick, userLo
   const getBuildingIcon = (building) => {
     const isHighlighted = highlightedMarker === building.id
     if (building.icon) {
-      const path = `src/assets/img/${building.mapIcon}.png`
+      const path = `/img/${building.mapIcon}.png`
       return new L.Icon({
         ...baseIconOptions,
         iconUrl: path,
@@ -204,7 +204,7 @@ function LeafletMap({ selected, highlightedMarker, mapRef, onMarkerClick, userLo
 
   const getLandmarkIcon = (landmark) => {
     if (landmark.icon) {
-      const path = `src/assets/img/${landmark.mapIcon}.png`
+      const path = `/img/${landmark.mapIcon}.png`
       return new L.Icon({
         ...baseIconOptions,
         iconUrl: path,
@@ -269,7 +269,7 @@ function LeafletMap({ selected, highlightedMarker, mapRef, onMarkerClick, userLo
           <Popup>
             <div className="text-xs text-center">
               <img
-                src={`src/assets/img/${b.icon}.png`}
+                src={`/img/${b.icon}.png`}
                 alt={b.name}
                 className="block mx-auto w-40 object-cover py-4"
               />
@@ -296,7 +296,7 @@ function LeafletMap({ selected, highlightedMarker, mapRef, onMarkerClick, userLo
           <Popup>
             <div className="text-xs text-center">
               <img
-                src={`src/assets/img/${lm.icon}.png`}
+                src={`/img/${lm.icon}.png`}
                 alt={lm.name}
                 className="block mx-auto w-24 object-cover py-2"
               />

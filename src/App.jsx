@@ -5,7 +5,7 @@ import BuildingsList from './pages/BuildingsList'
 import BuildingDetail from './pages/BuildingDetail'
 
 // Import your logo/image
-import logo from '../src/assets/img/iit-logo.png' // adjust the path according to your folder structure
+import logo from '/img/iit-logo.png' // adjust the path according to your folder structure
 
 function App() {
   return (
