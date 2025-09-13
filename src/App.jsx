@@ -5,14 +5,14 @@ import BuildingsList from './pages/BuildingsList'
 import BuildingDetail from './pages/BuildingDetail'
 
 // Import your logo/image
-import logo from '/img/iit-logo.webp' // adjust the path according to your folder structure
+import logo from '/img/iit-logo.svg' // adjust the path according to your folder structure
 
 function App() {
   return (
     <BrowserRouter>
       <div className="min-h-screen">
         <header className="fixed top-0 left-0 right-0 z-10 h-16 border-b bg-white/70 backdrop-blur">
-          <div className="max-w-7xl h-full px-4 md:px-10 mx-auto flex items-center justify-between">
+          <div className="max-w-7xl h-full px-4 md:px-12 mx-auto flex items-center justify-between">
             <Link to="/" className="flex items-center">
               <img src={logo} alt="IIT Campus Logo" className="h-10 w-auto" />
             </Link>
