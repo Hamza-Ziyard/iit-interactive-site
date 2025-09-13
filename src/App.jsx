@@ -38,7 +38,7 @@ function App() {
           </div>
         </header>
 
-        <main className=" h-[calc(100vh-4rem-3rem)] overflow-y-auto">
+        <main className=" h-[calc(100vh-4rem-3rem)] overflow-y-hidden">
           <div className="pt-16 md:mx-auto h-full">
             <Routes>
               <Route path="/" element={<Home />} />

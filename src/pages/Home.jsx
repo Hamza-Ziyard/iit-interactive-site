@@ -42,10 +42,10 @@ export default function Home() {
               <p className="mt-8 max-w-xl text-gray-500">
                 Discover where learning meets fun, friends, and endless possibilities.
               </p>
-              <div className=" md:mt-7 fixed bottom-16 left-1/4 md:static">
+              <div className="mt-4">
                 <Link
                   to="/buildings"
-                  className="w-full md:w-auto inline-flex items-center rounded-full bg-gradient-to-r from-rose-400 to-rose-500 text-white shadow-lg px-20 md:px-10 py-4 text-md hover:from-rose-500 hover:to-rose-600 transition-colors"
+                  className="w-auto inline-flex items-center rounded-full bg-gradient-to-r from-rose-400 to-rose-500 text-white shadow-lg px-10 py-4 text-md hover:from-rose-500 hover:to-rose-600 transition-colors"
                 >
                   Start exploring
                 </Link>

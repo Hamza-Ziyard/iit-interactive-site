@@ -113,7 +113,7 @@ export default function BuildingsList() {
             {Array.from({ length: 5 }).map((_, i) => <li key={i}><SkeletonCard /></li>)}
           </ul>
         ) : (
-          <ul className="space-y-2">
+          <ul className="space-y-2 md:pr-2.5">
             {buildings.map((b, index) => (
               <li key={b.id}>
                 <div
@@ -128,13 +128,13 @@ export default function BuildingsList() {
                       <div className="w-16 md:w-24 py-2 md:py-4 rounded-xl bg-gradient-to-br from-gray-100 to-gray-100 ring-1 ring-gray-50">
                         <img src={`/img/${b.icon}.webp`} alt={b.name} />
                       </div>
-                      <div className="flex-1 pt-3 min-w-0">
+                      <div className="flex-1 pt-1 md:pt-3 min-w-0">
                         <div className="flex items-start justify-between gap-4">
                           <div className="min-w-0 text-left">
                             <h2 className="text-md md:text-lg font-semibold text-gray-900 truncate">
                               IIT - {b.name}
                             </h2>
-                            <p className="mt-3 mb-1 text-xs md:text-sm text-gray-500 truncate">
+                            <p className="mt-2 md:mt-3 mb-1 text-xs md:text-sm text-gray-500 truncate">
                               <span className="inline-flex items-center gap-2">
                                 <ClockIcon className="hidden md:block h-5 w-5 text-gray-400" />
                                 {distances[b.id] ? `${distances[b.id]} km away` : "Calculating..."}
@@ -188,7 +188,7 @@ export default function BuildingsList() {
       {/* Floating Map Button (Mobile only) */}
       <button
         onClick={() => setMapOpen(true)}
-        className="md:hidden fixed bottom-16 right-10 z-20 bg-rose-500 text-white p-5 rounded-full shadow-lg"
+        className="md:hidden fixed bottom-16 right-6 z-20 bg-rose-500 text-white p-5 rounded-full shadow-lg"
       >
         <MapIcon className="w-8 h-8" />
       </button>
