@@ -66,13 +66,13 @@ export default function BuildingDetail() {
 
   if (loading) {
     return (
-      <div className="h-full flex gap-8 p-6">
+      <div className="h-1/2 md:h-full md:flex gap-8 p-6">
         {/* Left skeleton */}
         <div className="relative h-full flex-1">
           <Skeleton className="w-full h-full rounded-3xl" />
         </div>
         {/* Right skeleton */}
-        <div className="bg-white rounded-2xl flex-1 h-full overflow-y-auto p-6 space-y-6">
+        <div className="bg-white rounded-2xl flex-1 md:h-full overflow-y-auto p-6 space-y-6">
           {[...Array(4)].map((_, idx) => (
             <div key={idx} className="flex justify-between gap-8">
               <div className='w-full space-y-3'>
@@ -101,9 +101,9 @@ export default function BuildingDetail() {
   }
 
   return (
-    <div className="h-full flex gap-8 p-6"> 
+    <div className="h-1/2 md:h-full md:flex gap-8"> 
       {/* Left visual panel */}
-      <div className="relative h-full flex-1">
+      <div className="relative h-full flex-1 mb-4">
         <div className="h-full w-full rounded-3xl overflow-hidden shadow-inner bg-sky-100 relative flex items-center justify-center">
           {activeSection === null && (
             <img
@@ -125,7 +125,7 @@ export default function BuildingDetail() {
         </div>
 
         {activeIndex >= 0 && (
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-3 ">
+          <div className="absolute bottom-6  left-1/2 -translate-x-1/2 flex items-center gap-3 ">
             <button onClick={goPrev} className="w-10 h-10 rounded-full bg-white shadow border border-gray-200 grid place-items-center text-gray-600 hover:bg-gray-50">
               <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-4 h-4 rotate-180" viewBox="0 0 24 24">
                 <path d="M11.47 5.47a.75.75 0 0 1 1.06 0l6 6a.75.75 0 1 1-1.06 1.06L12 7.56l-5.47 4.97a.75.75 0 1 1-1.06-1.06l6-6Z"/>
@@ -144,7 +144,7 @@ export default function BuildingDetail() {
       </div>
 
       {/* Right accordion */}
-      <div className="bg-white rounded-2xl overflow-hidden flex-1 h-full overflow-y-auto">
+      <div className="bg-white rounded-2xl overflow-hidden flex-1 md:h-full overflow-y-auto">
         {sections.map((section, idx) => (
           <div key={section.key} className={idx > 0 ? 'border-t border-gray-300' : ''}>
             <button

@@ -39,7 +39,7 @@ function App() {
         </header>
 
         <main className=" h-[calc(100vh-4rem-3rem)] overflow-y-auto">
-          <div className="pt-16 mx-auto h-full">
+          <div className="pt-16 md:mx-auto h-full">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/buildings" element={<BuildingsList />} />

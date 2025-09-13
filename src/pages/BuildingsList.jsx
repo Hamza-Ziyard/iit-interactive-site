@@ -4,12 +4,12 @@ import { buildings } from '../data/buildings'
 import { landmarks } from '../data/landmarks'
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
 import L from 'leaflet'
-import { MapPinIcon, ChevronRightIcon, ClockIcon } from '@heroicons/react/24/outline'
+import { MapPinIcon, ChevronRightIcon, ClockIcon, MapIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import studentImg from '/img/student.webp'
 
 // Haversine formula to calculate distance between two coords
 function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
-  const R = 6371 // Radius of the earth in km
+  const R = 6371
   const dLat = (lat2 - lat1) * Math.PI / 180
   const dLon = (lon2 - lon1) * Math.PI / 180
   const a =
@@ -19,10 +19,9 @@ function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
       Math.sin(dLon / 2) *
       Math.sin(dLon / 2)
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
-  return R * c // Distance in km
+  return R * c
 }
 
-// Skeleton Loader component
 function SkeletonCard() {
   return (
     <div className="bg-white shadow-sm rounded-3xl p-4 animate-pulse">
@@ -51,29 +50,26 @@ export default function BuildingsList() {
   const [highlightedMarker, setHighlightedMarker] = useState(null)
   const [userLocation, setUserLocation] = useState(null)
   const [distances, setDistances] = useState({})
-  const [loading, setLoading] = useState(true) // loading state
+  const [loading, setLoading] = useState(true)
+  const [mapOpen, setMapOpen] = useState(false) // mobile sheet state
   const navigate = useNavigate()
   const mapRef = useRef(null)
   const selected = buildings.find((b) => b.id === selectedId) || buildings[0]
 
-  // Get user location on mount
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (pos) => {
-          const { latitude, longitude } = pos.coords
-          setUserLocation({ lat: latitude, lng: longitude })
+          setUserLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude })
         },
         (err) => console.error("Geolocation error:", err),
         { enableHighAccuracy: true }
       )
     }
-    // fake delay for skeleton demo
     const timer = setTimeout(() => setLoading(false), 200)
     return () => clearTimeout(timer)
   }, [])
 
-  // Calculate distances when user location is available
   useEffect(() => {
     if (userLocation) {
       const newDistances = {}
@@ -89,11 +85,8 @@ export default function BuildingsList() {
     }
   }, [userLocation])
 
-  // On first load, open popup for the initially selected building
   useEffect(() => {
-    if (selected) {
-      setHighlightedMarker(selected.id)
-    }
+    if (selected) setHighlightedMarker(selected.id)
   }, [])
 
   const handleBuildingClick = (buildingId) => {
@@ -102,26 +95,22 @@ export default function BuildingsList() {
     if (mapRef.current) {
       const building = buildings.find(b => b.id === buildingId)
       if (building) {
-        mapRef.current.setView([building.lat, building.lng],15.5, { animate: true })
+        mapRef.current.setView([building.lat, building.lng], 15.5, { animate: true })
       }
     }
   }
 
   const handleBuildingDoubleClick = (buildingId, index) => {
-    if (index < 3) {
-      navigate(`/buildings/${buildingId}`)
-    }
+    if (index < 3) navigate(`/buildings/${buildingId}`)
   }
 
   return (
-    <div className="h-full grid grid-cols-1 md:grid-cols-2 gap-8">
-      {/* Left: list */}
+    <div className="h-full grid grid-cols-1 md:grid-cols-2 gap-8 relative">
+      {/* List */}
       <section className="overflow-y-auto">
         {loading ? (
           <ul className="space-y-3">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <li key={i}><SkeletonCard /></li>
-            ))}
+            {Array.from({ length: 5 }).map((_, i) => <li key={i}><SkeletonCard /></li>)}
           </ul>
         ) : (
           <ul className="space-y-2">
@@ -136,41 +125,35 @@ export default function BuildingsList() {
                 >
                   <div className="pl-3 pr-3 py-3">
                     <div className="flex gap-4">
-                      <div className="w-24 py-4 rounded-xl bg-gradient-to-br from-gray-100 to-gray-100 ring-1 ring-gray-50">
+                      <div className="w-16 md:w-24 py-2 md:py-4 rounded-xl bg-gradient-to-br from-gray-100 to-gray-100 ring-1 ring-gray-50">
                         <img src={`/img/${b.icon}.webp`} alt={b.name} />
                       </div>
                       <div className="flex-1 pt-3 min-w-0">
                         <div className="flex items-start justify-between gap-4">
                           <div className="min-w-0 text-left">
-                            <h2 className="text-lg font-semibold text-gray-900 truncate">
+                            <h2 className="text-md md:text-lg font-semibold text-gray-900 truncate">
                               IIT - {b.name}
                             </h2>
-                            <p className="mt-3 mb-1 text-sm text-gray-500 truncate">
+                            <p className="mt-3 mb-1 text-xs md:text-sm text-gray-500 truncate">
                               <span className="inline-flex items-center gap-2">
-                                <ClockIcon className="h-5 w-5 text-gray-400" />
-                                {distances[b.id] 
-                                  ? `${distances[b.id]} km away from you`
-                                  : "Calculating..."}
+                                <ClockIcon className="hidden md:block h-5 w-5 text-gray-400" />
+                                {distances[b.id] ? `${distances[b.id]} km away` : "Calculating..."}
                               </span>
                             </p>
-                            <p className="text-sm text-gray-500 truncate">
+                            <p className="text-xs md:text-sm text-gray-500 truncate">
                               <span className="inline-flex items-center gap-2">
-                                <MapPinIcon className="h-5 w-5 text-gray-400" />
+                                <MapPinIcon className="hidden md:block h-5 w-5 text-gray-400" />
                                 {b.address}
                               </span>
                             </p>
                           </div>
-
                           {index < 3 && (
-                            <div className='text-black'>
+                            <div>
                               <button
-                                onClick={(e) => {
-                                  e.stopPropagation()
-                                  navigate(`/buildings/${b.id}`)
-                                }}
-                                className="p-3 border-[1px] border-gray-300 rounded-full hover:bg-black hover:text-white hover:border-black"
+                                onClick={(e) => { e.stopPropagation(); navigate(`/buildings/${b.id}`) }}
+                                className="p-2 md:p-3 border border-gray-300 rounded-full hover:bg-black hover:text-white hover:border-black"
                               >
-                                <ChevronRightIcon className="h-4 w-4 stroke-2" />
+                                <ChevronRightIcon className="h-3 w-3 md:h-4 md:w-4 stroke-2" />
                               </button>
                             </div>
                           )}
@@ -185,14 +168,14 @@ export default function BuildingsList() {
         )}
       </section>
 
-      {/* Right: Map */}
+      {/* Desktop Map */}
       {loading ? (
         <SkeletonMap />
       ) : (
         <aside className="hidden md:block relative h-full">
           <div className="h-full w-full rounded-3xl overflow-hidden shadow-inner ring-1 ring-gray-200">
-            <LeafletMap 
-              selected={selected} 
+            <LeafletMap
+              selected={selected}
               highlightedMarker={highlightedMarker}
               mapRef={mapRef}
               onMarkerClick={handleBuildingClick}
@@ -201,69 +184,78 @@ export default function BuildingsList() {
           </div>
         </aside>
       )}
+
+      {/* Floating Map Button (Mobile only) */}
+      <button
+        onClick={() => setMapOpen(true)}
+        className="md:hidden fixed bottom-16 right-10 z-20 bg-rose-500 text-white p-5 rounded-full shadow-lg"
+      >
+        <MapIcon className="w-8 h-8" />
+      </button>
+
+      {/* Mobile Map Sheet */}
+      {mapOpen && (
+        <div className="md:hidden fixed inset-0 z-30 flex flex-col bg-black/40">
+          <div
+            className="flex-1"
+            onClick={() => setMapOpen(false)}
+          />
+          <div className="bg-gray-100 rounded-t-3xl shadow-xl h-[95%] overflow-hidden animate-slide-up flex flex-col items-end gap-2 pt-2">
+            <button
+              onClick={() => setMapOpen(false)}
+              className=" w-10 h-10 bg-white p-2 mr-2 rounded-full"
+            >
+              <XMarkIcon className=" text-gray-700" />
+            </button>
+            <LeafletMap
+              selected={selected}
+              highlightedMarker={highlightedMarker}
+              mapRef={mapRef}
+              onMarkerClick={handleBuildingClick}
+              userLocation={userLocation}
+            />
+          </div>
+        </div>
+      )}
     </div>
   )
 }
 
+/* ---------------- Map Component ---------------- */
 function LeafletMap({ selected, highlightedMarker, mapRef, onMarkerClick, userLocation }) {
-  const center = useMemo(
-    () => [selected?.lat || 6.9271, selected?.lng || 79.8612],
-    [selected]
-  )
+  const center = useMemo(() => [selected?.lat || 6.9271, selected?.lng || 79.8612], [selected])
   const markerRefs = useRef({})
 
   useEffect(() => {
     if (!highlightedMarker) return
     const marker = markerRefs.current[highlightedMarker]
-    if (marker && marker.openPopup) {
-      marker.openPopup()
-    }
+    if (marker && marker.openPopup) marker.openPopup()
   }, [highlightedMarker])
 
-  const baseIconOptions = {
-    iconAnchor: [12, 41],
-    popupAnchor: [35, -50],
-    shadowSize: [70, 70],
-  }
+  const baseIconOptions = { iconAnchor: [12, 41], popupAnchor: [35, -50], shadowSize: [70, 70] }
 
-  const getBuildingIcon = (building) => {
-    const isHighlighted = highlightedMarker === building.id
-    if (building.icon) {
-      const path = `/img/${building.mapIcon}.webp`
-      return new L.Icon({
-        ...baseIconOptions,
-        iconUrl: path,
-        iconRetinaUrl: path,
-        iconSize: isHighlighted ? [90, 100] : [55, 60],
-      })
-    }
-  }
-
-  const getLandmarkIcon = (landmark) => {
-    if (landmark.icon) {
-      const path = `/img/${landmark.mapIcon}.webp`
-      return new L.Icon({
-        ...baseIconOptions,
-        iconUrl: path,
-        iconRetinaUrl: path,
-        iconSize: [40, 40],
-      })
-    }
+  const getBuildingIcon = (b) => {
+    const path = `/img/${b.mapIcon}.webp`
     return new L.Icon({
       ...baseIconOptions,
-      iconUrl:
-        'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.webp',
-      iconRetinaUrl:
-        'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.webp',
-      iconSize: [70, 70],
+      iconUrl: path,
+      iconRetinaUrl: path,
+      iconSize: highlightedMarker === b.id ? [90, 100] : [55, 60],
     })
   }
+
+  const getLandmarkIcon = (lm) =>
+    new L.Icon({
+      ...baseIconOptions,
+      iconUrl: `/img/${lm.mapIcon}.webp`,
+      iconRetinaUrl: `/img/${lm.mapIcon}.webp`,
+      iconSize: [40, 40],
+    })
 
   const userIcon = new L.Icon({
     iconUrl: studentImg,
     iconRetinaUrl: studentImg,
-    iconSize: [100, 100],
-    className: 'user-location-marker'
+    iconSize: [80, 80],
   })
 
   function RecenterView({ coords }) {
@@ -273,16 +265,10 @@ function LeafletMap({ selected, highlightedMarker, mapRef, onMarkerClick, userLo
   }
 
   return (
-    <MapContainer
-      ref={mapRef}
-      center={center}
-      zoom={16}
-      style={{ height: '100%', width: '100%' }}
-      scrollWheelZoom
-    >
+    <MapContainer ref={mapRef} center={center} zoom={16} style={{ height: '100%', width: '100%' }}>
       <TileLayer
         url="https://cartodb-basemaps-a.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.webp"
-        attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>'
+        attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
       />
 
       {userLocation && (
@@ -291,29 +277,24 @@ function LeafletMap({ selected, highlightedMarker, mapRef, onMarkerClick, userLo
         </Marker>
       )}
 
-      {buildings.map((b, index) => (
+      {buildings.map((b, i) => (
         <Marker
           key={b.id}
           ref={(ref) => { if (ref) markerRefs.current[b.id] = ref }}
-          position={[b.lat || 0, b.lng || 0]}
+          position={[b.lat, b.lng]}
           icon={getBuildingIcon(b)}
           eventHandlers={{ click: () => onMarkerClick(b.id) }}
         >
           <Popup>
             <div className="text-xs text-center">
-              <img
-                src={`/img/${b.icon}.webp`}
-                alt={b.name}
-                className="block mx-auto w-40 object-cover py-4"
-              />
-              <div className="font-semibold text-xl">IIT - {b.name}</div>
+              <img src={`/img/${b.icon}.webp`} alt={b.name} className="mx-auto w-32 py-3" />
+              <div className="font-semibold text-lg">IIT - {b.name}</div>
               <div className="text-gray-500 py-2">{b.address}</div>
             </div>
-
-            {index < 3 && (
+            {i < 3 && (
               <Link
                 to={`/buildings/${b.id}`}
-                className="my-4 w-full block text-center px-3 py-3 rounded-full bg-blue-50 text-blue hover:bg-blue-100 transition-colors"
+                className="text-center mt-3 block px-3 py-2 rounded-full bg-blue-50 text-blue-600 hover:bg-blue-100"
               >
                 Explore
               </Link>
@@ -323,16 +304,12 @@ function LeafletMap({ selected, highlightedMarker, mapRef, onMarkerClick, userLo
       ))}
 
       {landmarks.map((lm) => (
-        <Marker key={lm.id} position={[lm.lat || 0, lm.lng || 0]} icon={getLandmarkIcon(lm)}>
+        <Marker key={lm.id} position={[lm.lat, lm.lng]} icon={getLandmarkIcon(lm)}>
           <Popup>
             <div className="text-xs text-center">
-              <img
-                src={`/img/${lm.icon}.webp`}
-                alt={lm.name}
-                className="block mx-auto w-24 object-cover py-2"
-              />
-              <div className="font-semibold text-md">{lm.name}</div>
-              <div className="text-gray-500 py-1">{lm.address}</div>
+              <img src={`/img/${lm.icon}.webp`} alt={lm.name} className="mx-auto w-20 py-2" />
+              <div className="font-semibold">{lm.name}</div>
+              <div className="text-gray-500">{lm.address}</div>
             </div>
           </Popup>
         </Marker>
