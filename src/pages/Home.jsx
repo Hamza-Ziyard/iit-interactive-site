@@ -39,10 +39,10 @@ export default function Home() {
                   <span className="text-red-600">T</span>echnology
                 </div>
               </div>
-              <p className="mt-8 max-w-xl text-gray-500">
+              <p className="mt-4 md:mt-8 max-w-xl text-gray-500">
                 Discover where learning meets fun, friends, and endless possibilities.
               </p>
-              <div className="mt-4">
+              <div className="mt-4 md:mt-8">
                 <Link
                   to="/buildings"
                   className="w-auto inline-flex items-center rounded-full bg-gradient-to-r from-rose-400 to-rose-500 text-white shadow-lg px-10 py-4 text-md hover:from-rose-500 hover:to-rose-600 transition-colors"

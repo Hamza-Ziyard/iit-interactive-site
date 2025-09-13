@@ -144,7 +144,7 @@ export default function BuildingDetail() {
       </div>
 
       {/* Right accordion */}
-      <div className="bg-white rounded-2xl overflow-hidden flex-1 md:h-full overflow-y-auto">
+      <div className="bg-white rounded-2xl flex-1 md:h-full overflow-y-auto">
         {sections.map((section, idx) => (
           <div key={section.key} className={idx > 0 ? 'border-t border-gray-300' : ''}>
             <button
