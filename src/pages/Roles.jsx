@@ -1,67 +1,111 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import HTMLFlipBook from "react-pageflip";
+import { rolesContent } from "../data/rolesContent";
 
-const Page = React.forwardRef(({ children, className }, ref) => {
-  return (
-    <div
-      className={`bg-white rounded-lg border border-gray-200 p-8 w-full h-full flex items-center justify-center ${className}`}
-      ref={ref}
-    >
-      <div className="text-gray-800 text-lg leading-relaxed text-center">
-        {children}
-      </div>
+const Page = React.forwardRef(({ children, className, pageNumber, totalPages }, ref) => (
+  <div
+    className={`relative bg-white shadow-lg rounded-lg border border-gray-200 p-8 w-full h-full flex flex-col justify-between ${className}`}
+    ref={ref}
+  >
+    <div className="text-gray-800 text-lg leading-relaxed text-left flex-1">
+      {children}
     </div>
-  );
-});
+    <div className="text-xs text-center text-gray-400 mt-4 absolute bottom-4 right-4">
+      {pageNumber} of {totalPages}
+    </div>
+  </div>
+));
 
 export default function Roles() {
+  const flipBook = useRef(null);
   const [currentPage, setCurrentPage] = useState(0);
-  const totalPages = 8; // cover + 6 content + back cover
+
+  const totalPages = rolesContent.length;
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      
+    <div className="w-full">
+      {/* Desktop flipbook */}
+      <div className="hidden md:flex flex-col items-center justify-center h-screen px-4">
+        <h1 className="text-6xl font-bold mb-16">Roles</h1>
 
-      <HTMLFlipBook
-        width={400}
-        height={550}
-        size="stretch"
-        minWidth={315}
-        maxWidth={600}
-        minHeight={400}
-        maxHeight={800}
-        maxShadowOpacity={0.5}
-        showCover={true}
-        mobileScrollSupport={true}
-        className={`rounded-xl transition-shadow duration-300 ${
-          currentPage === 0 || currentPage === totalPages - 1
-            ? "shadow-none"
-            : "shadow-2xl"
-        }`}
-        onFlip={(e) => setCurrentPage(e.data)}
-      >
-        {/* --- COVER PAGE --- */}
-        <Page className="bg-green-900 ">
-            <div className="py-4 px-4">
+        <HTMLFlipBook
+          width={600}
+          height={720}
+          minWidth={600}
+          maxWidth={900}
+          minHeight={400}
+          maxHeight={800}
+          maxShadowOpacity={0.5}
+          mobileScrollSupport={true}
+          className="rounded-xl"
+          ref={flipBook}
+          onFlip={(e) => setCurrentPage(e.data)}
+        >
+          {rolesContent.map((page, index) => (
+            <Page key={index} pageNumber={index + 1} totalPages={totalPages}>
+              {page.type === "cover" && (
+                <div className="rounded-3xl flex flex-col items-center gap-8 h-full">
+                  {page.image && (
+                    <img
+                      src={page.image}
+                      className="max-h-[400px] w-auto object-contain rounded-3xl"
+                      alt=""
+                    />
+                  )}
+                  <h1 className="text-4xl font-bold text-center px-5">
+                    {page.title}
+                  </h1>
+                </div>
+              )}
 
-        {/* <h1 className="text-white text-3xl font-bold mb-6">Common Guidelines</h1> */}
-        <h1 className="text-white text-6xl leading-[1.2] tracking-wide font-bold mb-6">Roles & Responsibilities</h1>
-            </div>
-        </Page>
 
-        {/* --- CONTENT PAGES --- */}
-        <Page>Welcome to the Common Guidelines book.</Page>
-        <Page>Guideline 1: Keep your design accessible.</Page>
-        <Page>Guideline 2: Maintain consistency in UI elements.</Page>
-        <Page>Guideline 3: Prioritize performance.</Page>
-        <Page>Guideline 4: Provide clear navigation.</Page>
-        <Page>Guideline 5: Ensure responsive design.</Page>
+        <div>
 
-        {/* --- BACK COVER --- */}
-        <Page className="bg-gray-800 text-white font-bold text-2xl">
-          The End ✨
-        </Page>
-      </HTMLFlipBook>
+              <p className="text-gray-600 leading-[1.5] text-left text-sm">
+                {page.para}
+              </p>
+        </div>
+              {page.type === "text" &&
+                page.items.map((item) => (
+                  
+                  <div
+                    key={item.number}
+                    className="flex items-start gap-2 h-full mt-6 border-t-[1.5px] px-4 pt-4"
+                  >
+                    <p className="mr-2 text-sm font-bold">{item.number}</p>
+                    <p className="text-sm leading-[1.5] text-gray-600">
+                      {item.text}
+                    </p>
+
+                  </div>
+                ))}
+            </Page>
+          ))}
+        </HTMLFlipBook>
+      </div>
+
+      {/* Mobile list view */}
+      <div className="flex flex-col w-full md:hidden gap-2 px-4 py-6">
+        <h1 className="text-4xl font-bold mb-8 text-left">Common Guidelines</h1>
+        {rolesContent.map((page, index) => (
+          <div key={index} className="">
+            {page.type === "cover" && (
+              <div className="flex flex-col items-start gap-4">
+                <h2 className="text-2xl font-semibold text-left">{page.title}</h2>
+              </div>
+            )}
+
+            {page.type === "text" &&
+              page.items.map((item) => (
+                <div key={item.number} className="flex flex-col gap-2 my-4 text-left">
+                  <p className="font-bold">{item.number}</p>
+                  <p className="text-sm text-gray-600">{item.text}</p>
+                </div>
+              ))}
+
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
