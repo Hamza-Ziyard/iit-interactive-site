@@ -22,11 +22,36 @@ function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
   return R * c // Distance in km
 }
 
+// Skeleton Loader component
+function SkeletonCard() {
+  return (
+    <div className="bg-white shadow-sm rounded-3xl p-4 animate-pulse">
+      <div className="flex gap-4">
+        <div className="w-24 h-20 bg-gray-200 rounded-xl"></div>
+        <div className="flex-1 space-y-3 pt-2">
+          <div className="h-4 bg-gray-200 rounded w-2/3"></div>
+          <div className="h-3 bg-gray-200 rounded w-1/2"></div>
+          <div className="h-3 bg-gray-200 rounded w-3/4"></div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function SkeletonMap() {
+  return (
+    <div className="hidden md:block relative h-full">
+      <div className="h-full w-full rounded-3xl bg-gray-200 animate-pulse"></div>
+    </div>
+  )
+}
+
 export default function BuildingsList() {
   const [selectedId, setSelectedId] = useState(buildings[0]?.id)
   const [highlightedMarker, setHighlightedMarker] = useState(null)
   const [userLocation, setUserLocation] = useState(null)
   const [distances, setDistances] = useState({})
+  const [loading, setLoading] = useState(true) // loading state
   const navigate = useNavigate()
   const mapRef = useRef(null)
   const selected = buildings.find((b) => b.id === selectedId) || buildings[0]
@@ -43,6 +68,9 @@ export default function BuildingsList() {
         { enableHighAccuracy: true }
       )
     }
+    // fake delay for skeleton demo
+    const timer = setTimeout(() => setLoading(false), 1500)
+    return () => clearTimeout(timer)
   }, [])
 
   // Calculate distances when user location is available
@@ -55,7 +83,7 @@ export default function BuildingsList() {
           userLocation.lng,
           b.lat,
           b.lng
-        ).toFixed(2) // 2 decimals
+        ).toFixed(2)
       })
       setDistances(newDistances)
     }
@@ -79,7 +107,6 @@ export default function BuildingsList() {
     }
   }
 
-  // Only first 3 buildings have navigation on double-click
   const handleBuildingDoubleClick = (buildingId, index) => {
     if (index < 3) {
       navigate(`/buildings/${buildingId}`)
@@ -90,79 +117,90 @@ export default function BuildingsList() {
     <div className="h-full grid grid-cols-1 md:grid-cols-2 gap-8">
       {/* Left: list */}
       <section className="overflow-y-auto">
-        <ul className="space-y-2">
-          {buildings.map((b, index) => (
-            <li key={b.id}>
-              <div
-                onClick={() => handleBuildingClick(b.id)}
-                onDoubleClick={() => handleBuildingDoubleClick(b.id, index)}
-                className={`group relative bg-white shadow-sm transition-colors cursor-pointer ${
-                  selectedId === b.id ? 'border-2 border-rose-500 bg-gray-50 rounded-3xl' : ''
-                }`}
-              >
-                <div className="pl-3 pr-3 py-3">
-                  <div className="flex gap-4">
-                    <div className="w-24 py-4 rounded-xl bg-gradient-to-br from-gray-100 to-gray-100 ring-1 ring-gray-50">
-                      <img src={`/img/${b.icon}.png`} alt={b.name} />
-                    </div>
-                    <div className="flex-1 pt-3 min-w-0">
-                      <div className="flex items-start justify-between gap-4">
-                        <div className="min-w-0 text-left">
-                          <h2 className="text-lg font-semibold text-gray-900 truncate">
-                            IIT - {b.name}
-                          </h2>
-                          <p className="mt-3 mb-1 text-sm text-gray-500 truncate">
-                            <span className="inline-flex items-center gap-2">
-                              <ClockIcon className="h-5 w-5 text-gray-400" />
-                              {distances[b.id] 
-                                ? `${distances[b.id]} km away from you`
-                                : "Calculating..."}
-                            </span>
-                          </p>
-                          <p className="text-sm text-gray-500 truncate">
-                            <span className="inline-flex items-center gap-2">
-                              <MapPinIcon className="h-5 w-5 text-gray-400" />
-                              {b.address}
-                            </span>
-                          </p>
-                        </div>
-
-                        {/* Only show button for first three buildings */}
-                        {index < 3 && (
-                          <div className='text-black'>
-                            <button
-                              onClick={(e) => {
-                                e.stopPropagation()
-                                navigate(`/buildings/${b.id}`)
-                              }}
-                              className="p-3 border-[1px] border-gray-300 rounded-full hover:bg-black hover:text-white hover:border-black"
-                            >
-                              <ChevronRightIcon className="h-4 w-4 stroke-2" />
-                            </button>
+        {loading ? (
+          <ul className="space-y-3">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <li key={i}><SkeletonCard /></li>
+            ))}
+          </ul>
+        ) : (
+          <ul className="space-y-2">
+            {buildings.map((b, index) => (
+              <li key={b.id}>
+                <div
+                  onClick={() => handleBuildingClick(b.id)}
+                  onDoubleClick={() => handleBuildingDoubleClick(b.id, index)}
+                  className={`group relative bg-white shadow-sm transition-colors cursor-pointer ${
+                    selectedId === b.id ? 'border-2 border-rose-500 bg-gray-50 rounded-3xl' : ''
+                  }`}
+                >
+                  <div className="pl-3 pr-3 py-3">
+                    <div className="flex gap-4">
+                      <div className="w-24 py-4 rounded-xl bg-gradient-to-br from-gray-100 to-gray-100 ring-1 ring-gray-50">
+                        <img src={`/img/${b.icon}.png`} alt={b.name} />
+                      </div>
+                      <div className="flex-1 pt-3 min-w-0">
+                        <div className="flex items-start justify-between gap-4">
+                          <div className="min-w-0 text-left">
+                            <h2 className="text-lg font-semibold text-gray-900 truncate">
+                              IIT - {b.name}
+                            </h2>
+                            <p className="mt-3 mb-1 text-sm text-gray-500 truncate">
+                              <span className="inline-flex items-center gap-2">
+                                <ClockIcon className="h-5 w-5 text-gray-400" />
+                                {distances[b.id] 
+                                  ? `${distances[b.id]} km away from you`
+                                  : "Calculating..."}
+                              </span>
+                            </p>
+                            <p className="text-sm text-gray-500 truncate">
+                              <span className="inline-flex items-center gap-2">
+                                <MapPinIcon className="h-5 w-5 text-gray-400" />
+                                {b.address}
+                              </span>
+                            </p>
                           </div>
-                        )}
+
+                          {index < 3 && (
+                            <div className='text-black'>
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation()
+                                  navigate(`/buildings/${b.id}`)
+                                }}
+                                className="p-3 border-[1px] border-gray-300 rounded-full hover:bg-black hover:text-white hover:border-black"
+                              >
+                                <ChevronRightIcon className="h-4 w-4 stroke-2" />
+                              </button>
+                            </div>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </li>
-          ))}
-        </ul>
+              </li>
+            ))}
+          </ul>
+        )}
       </section>
 
       {/* Right: Map */}
-      <aside className="hidden md:block relative h-full">
-        <div className="h-full w-full rounded-3xl overflow-hidden shadow-inner ring-1 ring-gray-200">
-          <LeafletMap 
-            selected={selected} 
-            highlightedMarker={highlightedMarker}
-            mapRef={mapRef}
-            onMarkerClick={handleBuildingClick}
-            userLocation={userLocation}
-          />
-        </div>
-      </aside>
+      {loading ? (
+        <SkeletonMap />
+      ) : (
+        <aside className="hidden md:block relative h-full">
+          <div className="h-full w-full rounded-3xl overflow-hidden shadow-inner ring-1 ring-gray-200">
+            <LeafletMap 
+              selected={selected} 
+              highlightedMarker={highlightedMarker}
+              mapRef={mapRef}
+              onMarkerClick={handleBuildingClick}
+              userLocation={userLocation}
+            />
+          </div>
+        </aside>
+      )}
     </div>
   )
 }
@@ -197,7 +235,6 @@ function LeafletMap({ selected, highlightedMarker, mapRef, onMarkerClick, userLo
         iconUrl: path,
         iconRetinaUrl: path,
         iconSize: isHighlighted ? [100, 100] : [60, 60],
-        className: isHighlighted ? '' : '',
       })
     }
   }
@@ -248,23 +285,19 @@ function LeafletMap({ selected, highlightedMarker, mapRef, onMarkerClick, userLo
         attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>'
       />
 
-      {/* User location marker */}
       {userLocation && (
         <Marker position={[userLocation.lat, userLocation.lng]} icon={userIcon}>
           <Popup>You are here</Popup>
         </Marker>
       )}
 
-      {/* Building markers */}
       {buildings.map((b, index) => (
         <Marker
           key={b.id}
           ref={(ref) => { if (ref) markerRefs.current[b.id] = ref }}
           position={[b.lat || 0, b.lng || 0]}
           icon={getBuildingIcon(b)}
-          eventHandlers={{
-            click: () => onMarkerClick(b.id)
-          }}
+          eventHandlers={{ click: () => onMarkerClick(b.id) }}
         >
           <Popup>
             <div className="text-xs text-center">
@@ -277,7 +310,6 @@ function LeafletMap({ selected, highlightedMarker, mapRef, onMarkerClick, userLo
               <div className="text-gray-500 py-2">{b.address}</div>
             </div>
 
-            {/* Only first 3 buildings can navigate */}
             {index < 3 && (
               <Link
                 to={`/buildings/${b.id}`}
@@ -290,7 +322,6 @@ function LeafletMap({ selected, highlightedMarker, mapRef, onMarkerClick, userLo
         </Marker>
       ))}
 
-      {/* Landmark markers */}
       {landmarks.map((lm) => (
         <Marker key={lm.id} position={[lm.lat || 0, lm.lng || 0]} icon={getLandmarkIcon(lm)}>
           <Popup>
