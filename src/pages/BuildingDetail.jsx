@@ -74,10 +74,13 @@ export default function BuildingDetail() {
         {/* Right skeleton */}
         <div className="bg-white rounded-2xl flex-1 h-full overflow-y-auto p-6 space-y-6">
           {[...Array(4)].map((_, idx) => (
-            <div key={idx} className="space-y-3">
-              <Skeleton className="w-1/3 h-5" />
+            <div key={idx} className="flex justify-between gap-8">
+              <div className='w-full space-y-3'>
+              <Skeleton className="w-3/5 h-8" />
               <Skeleton className="w-2/3 h-3" />
-              <Skeleton className="w-full h-12" />
+
+              </div>
+              <Skeleton className="w-5 h-5" />
             </div>
           ))}
         </div>
