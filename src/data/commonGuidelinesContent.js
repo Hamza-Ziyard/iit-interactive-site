@@ -2,7 +2,7 @@ export const commonGuidelinesContent = [
     {
       type: "cover",
       title: "Introduction",
-      image: "/img/spencer.webp",
+      image: "/img/guidelines-book/book-intro.webp",
     },
     {
       type: "text",
@@ -53,7 +53,7 @@ export const commonGuidelinesContent = [
     },
     {
       type: "cover",
-      title: "Class Rooms, Lobby, Corridors and Canteen",
+      title: "Class Rooms, Lobby, Corridors and Canteen - I",
       image: "/img/spencer.webp",
     },
     {
@@ -83,7 +83,7 @@ export const commonGuidelinesContent = [
     },
     {
         type: "cover",
-        title: "Class Rooms, Lobby, Corridors and Canteen",
+        title: "Class Rooms, Lobby, Corridors and Canteen - II",
         image: "/img/spencer.webp",
     },
     {
@@ -101,7 +101,7 @@ export const commonGuidelinesContent = [
     },
     {
         type: "cover",
-        title: "Library and IT Laboratories",
+        title: "Library and IT Laboratories - I",
         image: "/img/spencer.webp",
     },
     {
@@ -139,7 +139,7 @@ export const commonGuidelinesContent = [
     },
     {
         type: "cover",
-        title: "Library and IT Laboratories",
+        title: "Library and IT Laboratories - II",
         image: "/img/spencer.webp",
     },
     {
@@ -177,7 +177,7 @@ export const commonGuidelinesContent = [
     },
     {
         type: "cover",
-        title: "Library and IT Laboratories",
+        title: "Library and IT Laboratories - III",
         image: "/img/spencer.webp",
     },
     {
@@ -195,7 +195,7 @@ export const commonGuidelinesContent = [
     },
     {
         type: "cover",
-        title: "General Conduct and Behaviour",
+        title: "General Conduct and Behaviour - I",
         image: "/img/spencer.webp",
     },
     {
@@ -229,7 +229,7 @@ export const commonGuidelinesContent = [
     },
     {
         type: "cover",
-        title: "General Conduct and Behaviour",
+        title: "General Conduct and Behaviour - II",
         image: "/img/spencer.webp",
     },
     {
@@ -267,7 +267,7 @@ export const commonGuidelinesContent = [
     },
     {
         type: "cover",
-        title: "General Conduct and Behaviour",
+        title: "General Conduct and Behaviour - III",
         image: "/img/spencer.webp",
     },
     {
@@ -301,7 +301,7 @@ export const commonGuidelinesContent = [
     },
     {
         type: "cover",
-        title: "General Conduct and Behaviour",
+        title: "General Conduct and Behaviour - IV",
         image: "/img/spencer.webp",
     },
     {
@@ -323,7 +323,7 @@ export const commonGuidelinesContent = [
     },
     {
         type: "cover",
-        title: "Sanctions",
+        title: "Sanctions, Review of the Code of Conduct",
         image: "/img/spencer.webp",
     },
     {
@@ -332,33 +332,13 @@ export const commonGuidelinesContent = [
           {
             number: "6.1",
             text: "If any student is found to breach this Code of Conduct he/she will face disciplinary action ranging from verbal warning to termination of studentship.",
-          }
-        ],
-    },
-    {
-        type: "cover",
-        title: "Review of the Code of Conduct",
-        image: "/img/spencer.webp",
-    },
-    {
-        type: "text",
-        items: [
+          },
           {
             number: "7.1",
             text: "This Code of Conduct may be reviewed at any time by the Management of IIT.",
-          }
-        ],
-    },
-    {
-        type: "cover",
-        title: "Effective Date",
-        image: "/img/spencer.webp",
-    },
-    {
-        type: "text",
-        items: [
+          },
           {
-            number: "",
+            number: "8.1",
             text: "This Code of Conduct will come into effect from 1st January 2019.",
           }
         ],
