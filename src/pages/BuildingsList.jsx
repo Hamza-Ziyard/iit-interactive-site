@@ -234,7 +234,7 @@ function LeafletMap({ selected, highlightedMarker, mapRef, onMarkerClick, userLo
         ...baseIconOptions,
         iconUrl: path,
         iconRetinaUrl: path,
-        iconSize: isHighlighted ? [100, 100] : [60, 60],
+        iconSize: isHighlighted ? [90, 100] : [55, 60],
       })
     }
   }
