@@ -30,7 +30,7 @@ export default function Roles() {
 
         <HTMLFlipBook
           width={600}
-          height={720}
+          height={750}
           minWidth={600}
           maxWidth={900}
           minHeight={400}
