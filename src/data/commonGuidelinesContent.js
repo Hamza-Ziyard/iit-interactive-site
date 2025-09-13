@@ -19,6 +19,38 @@ export const commonGuidelinesContent = [
     },
     {
       type: "cover",
+      title: "Dress Code",
+      image: "/img/guidelines-book/book-intro.webp",
+    },
+    {
+      type: "text",
+      items: [
+        {
+          number: "Men",
+        },
+        {
+          number: "✓",
+          text: "Collared shirts (long/short sleeve) • Formal trousers • Closed-toe shoes • Belt when wearing trousers • Professional appearance",
+        },
+        {
+          number: "✗",
+          text: "T-shirts or tank tops • Shorts or three-quarter pants • Flip-flops or sandals • Sports wear or casual attire • Unkempt appearance",
+        },
+        {
+          number: "Women",
+        },
+        {
+          number: "✓",
+          text: "Formal blouses and shirts • Knee-length or longer skirts/dresses • Formal trousers • Closed-toe shoes • Professional attire",
+        },
+        {
+          number: "✗",
+          text: "Revealing or tight-fitting clothes • Short skirts or dresses • Sleeveless tops • Flip-flops or sandals • Casual or sports wear",
+        },
+      ],
+    },  
+    {
+      type: "cover",
       title: "Health and Safety",
       image: "/img/spencer.webp",
     },
