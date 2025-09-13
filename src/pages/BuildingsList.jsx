@@ -5,7 +5,7 @@ import { landmarks } from '../data/landmarks'
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
 import L from 'leaflet'
 import { MapPinIcon, ChevronRightIcon, ClockIcon } from '@heroicons/react/24/outline'
-import studentImg from '/img/student.png'
+import studentImg from '/img/student.webp'
 
 // Haversine formula to calculate distance between two coords
 function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
@@ -69,7 +69,7 @@ export default function BuildingsList() {
       )
     }
     // fake delay for skeleton demo
-    const timer = setTimeout(() => setLoading(false), 1500)
+    const timer = setTimeout(() => setLoading(false), 200)
     return () => clearTimeout(timer)
   }, [])
 
@@ -137,7 +137,7 @@ export default function BuildingsList() {
                   <div className="pl-3 pr-3 py-3">
                     <div className="flex gap-4">
                       <div className="w-24 py-4 rounded-xl bg-gradient-to-br from-gray-100 to-gray-100 ring-1 ring-gray-50">
-                        <img src={`/img/${b.icon}.png`} alt={b.name} />
+                        <img src={`/img/${b.icon}.webp`} alt={b.name} />
                       </div>
                       <div className="flex-1 pt-3 min-w-0">
                         <div className="flex items-start justify-between gap-4">
@@ -229,7 +229,7 @@ function LeafletMap({ selected, highlightedMarker, mapRef, onMarkerClick, userLo
   const getBuildingIcon = (building) => {
     const isHighlighted = highlightedMarker === building.id
     if (building.icon) {
-      const path = `/img/${building.mapIcon}.png`
+      const path = `/img/${building.mapIcon}.webp`
       return new L.Icon({
         ...baseIconOptions,
         iconUrl: path,
@@ -241,7 +241,7 @@ function LeafletMap({ selected, highlightedMarker, mapRef, onMarkerClick, userLo
 
   const getLandmarkIcon = (landmark) => {
     if (landmark.icon) {
-      const path = `/img/${landmark.mapIcon}.png`
+      const path = `/img/${landmark.mapIcon}.webp`
       return new L.Icon({
         ...baseIconOptions,
         iconUrl: path,
@@ -252,9 +252,9 @@ function LeafletMap({ selected, highlightedMarker, mapRef, onMarkerClick, userLo
     return new L.Icon({
       ...baseIconOptions,
       iconUrl:
-        'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png',
+        'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.webp',
       iconRetinaUrl:
-        'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+        'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.webp',
       iconSize: [70, 70],
     })
   }
@@ -281,7 +281,7 @@ function LeafletMap({ selected, highlightedMarker, mapRef, onMarkerClick, userLo
       scrollWheelZoom
     >
       <TileLayer
-        url="https://cartodb-basemaps-a.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png"
+        url="https://cartodb-basemaps-a.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.webp"
         attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>'
       />
 
@@ -302,7 +302,7 @@ function LeafletMap({ selected, highlightedMarker, mapRef, onMarkerClick, userLo
           <Popup>
             <div className="text-xs text-center">
               <img
-                src={`/img/${b.icon}.png`}
+                src={`/img/${b.icon}.webp`}
                 alt={b.name}
                 className="block mx-auto w-40 object-cover py-4"
               />
@@ -327,7 +327,7 @@ function LeafletMap({ selected, highlightedMarker, mapRef, onMarkerClick, userLo
           <Popup>
             <div className="text-xs text-center">
               <img
-                src={`/img/${lm.icon}.png`}
+                src={`/img/${lm.icon}.webp`}
                 alt={lm.name}
                 className="block mx-auto w-24 object-cover py-2"
               />

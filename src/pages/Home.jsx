@@ -7,7 +7,7 @@ export default function Home() {
 
   // Simulate async data loading
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000)
+    const timer = setTimeout(() => setLoading(false), 200)
     return () => clearTimeout(timer)
   }, [])
 
@@ -65,9 +65,9 @@ export default function Home() {
               </>
             ) : (
               <>
-                <img src="/img/guidelines-book.png" className="w-[200px] h-[650px] rounded-lg hover:scale-105 transition duration-150 ease-in-out" alt="" />
-                <img src="/img/roles-book.png" className="w-[200px] h-[650px] rounded-lg hover:scale-105 transition duration-150 ease-in-out" alt="" />
-                <img src="/img/meet-team-book.png" className="w-[200px] h-[650px] rounded-lg hover:scale-105 transition duration-150 ease-in-out" alt="" />
+                <img src="/img/guidelines-book.webp" className="w-[200px] h-[650px] rounded-lg hover:scale-105 transition duration-150 ease-in-out" alt="" />
+                <img src="/img/roles-book.webp" className="w-[200px] h-[650px] rounded-lg hover:scale-105 transition duration-150 ease-in-out" alt="" />
+                <img src="/img/meet-team-book.webp" className="w-[200px] h-[650px] rounded-lg hover:scale-105 transition duration-150 ease-in-out" alt="" />
               </>
             )}
           </div>

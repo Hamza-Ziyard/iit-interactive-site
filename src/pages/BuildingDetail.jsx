@@ -51,7 +51,7 @@ export default function BuildingDetail() {
 
   // Simulate loading (e.g., API/fetch images)
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1200) // 1.2s fake load
+    const timer = setTimeout(() => setLoading(false), 200) // 1.2s fake load
     return () => clearTimeout(timer)
   }, [])
 
@@ -107,7 +107,7 @@ export default function BuildingDetail() {
         <div className="h-full w-full rounded-3xl overflow-hidden shadow-inner bg-sky-100 relative flex items-center justify-center">
           {activeSection === null && (
             <img
-              src={`/img/${building.icon}.png`}
+              src={`/img/${building.icon}.webp`}
               alt={building.name}
               className="w-full h-auto object-contain opacity-90"
             />
