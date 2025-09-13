@@ -55,8 +55,8 @@ export default function Home() {
         </div>
 
         {/* Right column */}
-        <div className="w-full md:w-1/2 md:mt-0 md:h-full min-w-0">
-          <div className="flex gap-2 w-full h-full items-stretch min-w-0 pt-16 md:pt-8">
+        <div className="w-full md:w-1/2 md:mt-4 md:h-full min-w-0">
+          <div className="flex gap-2 w-full h-full items-stretch min-w-0 pt-8">
             {loading ? (
               <>
                 <SkeletonImage className="w-[200px] h-auto md:h-[650px] rounded-lg" />
@@ -65,9 +65,15 @@ export default function Home() {
               </>
             ) : (
               <>
-                <img src="/img/guidelines-book.webp" className="w-full lg:w-[200px] h-[300px] lg:h-[650px] object-contain rounded-lg hover:scale-105 transition duration-150 ease-in-out" alt="" />
-                <img src="/img/roles-book.webp" className="w-full  lg:w-[200px] h-[300px] lg:h-[650px] object-contain rounded-lg hover:scale-105 transition duration-150 ease-in-out" alt="" />
-                <img src="/img/meet-team-book.webp" className="w-full  lg:w-[200px] h-[300px] lg:h-[650px] object-contain rounded-lg hover:scale-105 transition duration-150 ease-in-out" alt="" />
+              <Link to="/common-guidelines">
+                <img src="/img/guidelines-book.webp" className="w-full lg:w-[200px] h-[200px] lg:h-[650px] object-fit rounded-lg hover:scale-105 transition duration-150 ease-in-out" alt="" />
+              </Link>
+              <Link to="/meet-the-team">
+                <img src="/img/meet-team-book.webp" className="w-full  lg:w-[200px] h-[200px] lg:h-[650px] object-fit  rounded-lg hover:scale-105 transition duration-150 ease-in-out" alt="" />
+                </Link>
+                <Link to="/roles-and-responsibilities">
+                <img src="/img/roles-book.webp" className="w-full  lg:w-[200px] h-[200px] lg:h-[650px] object-fit  rounded-lg hover:scale-105 transition duration-150 ease-in-out" alt="" />
+                </Link>
               </>
             )}
           </div>

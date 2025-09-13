@@ -3,6 +3,9 @@ import { BrowserRouter, Routes, Route, Link, NavLink } from 'react-router-dom'
 import Home from './pages/Home'
 import BuildingsList from './pages/BuildingsList'
 import BuildingDetail from './pages/BuildingDetail'
+import CommonGuidelines from './pages/CommonGuidelines'
+import Roles from './pages/Roles'
+import MeetTeam from './pages/MeetTeam'
 
 // Import your logo/image
 import logo from '/img/iit-logo.svg' // adjust the path according to your folder structure
@@ -45,6 +48,10 @@ function App() {
               <Route path="/buildings" element={<BuildingsList />} />
               <Route path="/buildings/:buildingId" element={<BuildingDetail />} />
               <Route path="*" element={<div>Page not found</div>} />
+
+          <Route path="/common-guidelines" element={<CommonGuidelines />} />
+          <Route path="/roles-and-responsibilities" element={<Roles />} />
+          <Route path="/meet-the-team" element={<MeetTeam />} />
             </Routes>
           </div>
         </main>
