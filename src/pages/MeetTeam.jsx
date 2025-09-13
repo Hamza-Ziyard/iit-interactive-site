@@ -1,67 +1,59 @@
-import React, { useState } from "react";
-import HTMLFlipBook from "react-pageflip";
-
-const Page = React.forwardRef(({ children, className }, ref) => {
-  return (
-    <div
-      className={`bg-white rounded-lg border border-gray-200 p-8 w-full h-full flex items-center justify-center ${className}`}
-      ref={ref}
-    >
-      <div className="text-gray-800 text-lg leading-relaxed text-center">
-        {children}
-      </div>
-    </div>
-  );
-});
+import React from "react";
+import { meetTeamContent } from "../data/meetTeamContent";
+import { Link } from 'react-router-dom'
 
 export default function MeetTeam() {
-  const [currentPage, setCurrentPage] = useState(0);
-  const totalPages = 8; // cover + 6 content + back cover
+  // Split into two sections
+  const firstSection = meetTeamContent.slice(0, 3);
+  const secondSection = meetTeamContent.slice(3);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      
+    <div className="w-full px-6 py-12">
+      <h1 className="text-4xl font-bold mb-12 text-center">Leadership</h1>
 
-      <HTMLFlipBook
-        width={400}
-        height={550}
-        size="stretch"
-        minWidth={315}
-        maxWidth={600}
-        minHeight={400}
-        maxHeight={800}
-        maxShadowOpacity={0.5}
-        showCover={true}
-        mobileScrollSupport={true}
-        className={`rounded-xl transition-shadow duration-300 ${
-          currentPage === 0 || currentPage === totalPages - 1
-            ? "shadow-none"
-            : "shadow-2xl"
-        }`}
-        onFlip={(e) => setCurrentPage(e.data)}
-      >
-        {/* --- COVER PAGE --- */}
-        <Page className="bg-amber-950 ">
-            <div className="py-4 px-4">
+      {/* Section 1: First 3 people */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-16">
+        {firstSection.map((member, index) => (
+          <div
+            key={index}
+            className="flex flex-col gap-2 items-center bg-white rounded-3xl py-16 px-6 border-2"
+          >
+            {/* {member.image && (
+              <img
+                src={member.image}
+                alt={member.title}
+                className="w-40 h-40 object-cover rounded-full mb-4"
+              />
+            )} */}
+            <h2 className="text-xl font-semibold text-center">{member.title}</h2>
+            <p className="text-sm text-gray-600 text-center">{member.position}</p>
+            <Link className="text-sm text-blue-600 text-center">{member.email}</Link>
+          </div>
+        ))}
+      </div>
 
-        {/* <h1 className="text-white text-3xl font-bold mb-6">Common Guidelines</h1> */}
-        <h1 className="text-white text-6xl leading-[1.2] tracking-wide font-bold mb-6">Meet the Team</h1>
-            </div>
-        </Page>
+      {/* Section 2: Next 6 people */}
+      <h1 className="text-4xl font-bold mb-12 text-center">Level 4 Module Leaders</h1>
 
-        {/* --- CONTENT PAGES --- */}
-        <Page>Welcome to the Common Guidelines book.</Page>
-        <Page>Guideline 1: Keep your design accessible.</Page>
-        <Page>Guideline 2: Maintain consistency in UI elements.</Page>
-        <Page>Guideline 3: Prioritize performance.</Page>
-        <Page>Guideline 4: Provide clear navigation.</Page>
-        <Page>Guideline 5: Ensure responsive design.</Page>
-
-        {/* --- BACK COVER --- */}
-        <Page className="bg-gray-800 text-white font-bold text-2xl">
-          The End ✨
-        </Page>
-      </HTMLFlipBook>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        {secondSection.map((member, index) => (
+          <div
+            key={index}
+            className="flex flex-col gap-2 items-center bg-white rounded-3xl py-16 px-6 border-2"
+          >
+            {/* {member.image && (
+              <img
+                src={member.image}
+                alt={member.title}
+                className="w-32 h-32 object-cover rounded-full mb-4"
+              />
+            )} */}
+            <h2 className="text-lg font-semibold text-center">{member.title}</h2>
+            <p className="text-sm text-gray-600 text-center">{member.position}</p>
+            <Link className="text-sm text-blue-600 text-center">{member.email}</Link>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
