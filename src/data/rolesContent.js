@@ -123,7 +123,7 @@ export const rolesContent = [
     },
     {
       type: "text",
-      para: "The Assistant Module Leader helps uphold academic standards by contributing to teaching, assessment, student engagement, and administrative support, in alignment with institutional policies and module specifications. The key responsibilities are as follows:",
+      para: "The Assistant Module Leader helps uphold academic standards by contributing to teaching, assessment, student engagement, and administrative support, in alignment with institutional policies and module specifications.",
       items: [
         {
           number: "1",
