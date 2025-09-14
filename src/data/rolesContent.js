@@ -2,7 +2,7 @@ export const rolesContent = [
     {
       type: "cover",
       title: "Course Leader",
-      image: "/img/guidelines-book/book-intro.webp",
+      image: "/img/roles-book/book-course-leader.webp",
     },
     {
       type: "text",
@@ -37,7 +37,7 @@ export const rolesContent = [
     {
       type: "cover",
       title: "Level Coordinator",
-      image: "/img/guidelines-book/book-intro.webp",
+      image: "/img/roles-book/book-cordinator.webp",
     },
     {
       type: "text",
@@ -80,7 +80,7 @@ export const rolesContent = [
     {
       type: "cover",
       title: "Module Leaders",
-      image: "/img/guidelines-book/book-intro.webp",
+      image: "/img/roles-book/book-module-leader.webp",
     },
     {
       type: "text",
@@ -119,7 +119,7 @@ export const rolesContent = [
     {
       type: "cover",
       title: "Assistant Module Leaders",
-      image: "/img/guidelines-book/book-intro.webp",
+      image: "/img/roles-book/book-assistant-module-leader.webp",
     },
     {
       type: "text",
@@ -154,7 +154,7 @@ export const rolesContent = [
     {
       type: "cover",
       title: "Module Team Member",
-      image: "/img/guidelines-book/book-intro.webp",
+      image: "/img/roles-book/book-module-team.webp",
     },
     {
       type: "text",
@@ -197,7 +197,7 @@ export const rolesContent = [
     {
       type: "cover",
       title: "Project Supervisors",
-      image: "/img/guidelines-book/book-intro.webp",
+      image: "/img/roles-book/book-project-supervisor.webp",
     },
     {
       type: "text",
@@ -244,7 +244,7 @@ export const rolesContent = [
     {
       type: "cover",
       title: "Group Project Supervisors",
-      image: "/img/guidelines-book/book-intro.webp",
+      image: "/img/roles-book/book-group-project-supervisor.webp",
     },
     {
       type: "text",
@@ -287,7 +287,7 @@ export const rolesContent = [
     {
       type: "cover",
       title: "Academic Mentor (For Academic Staff)",
-      image: "/img/guidelines-book/book-intro.webp",
+      image: "/img/roles-book/book-mentor.webp",
     },
     {
       type: "text",
@@ -326,7 +326,7 @@ export const rolesContent = [
     {
       type: "cover",
       title: "Personal Tutor",
-      image: "/img/guidelines-book/book-intro.webp",
+      image: "/img/roles-book/book-personal-tutor.webp",
     },
     {
       type: "text",
@@ -365,7 +365,7 @@ export const rolesContent = [
     {
       type: "cover",
       title: "Teaching Sub-Committee",
-      image: "/img/guidelines-book/book-intro.webp",
+      image: "/img/roles-book/book-commitee.webp",
     },
     {
       type: "text",
