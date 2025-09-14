@@ -1,6 +1,6 @@
 export const buildings = [
   {
-    id: 'library',
+    id: 'iit-gp-square',
     name: 'GP Square',
     address: '10 Trelawney Pl, Colombo 04',
     description: 'A multi-story library with study rooms and a quiet floor.',
@@ -106,7 +106,7 @@ export const buildings = [
     actions: ['Library quiz', 'Support', 'Lecturer list', 'Courses offered']
   },
   {
-    id: 'science-hall',
+    id: 'iit-java-building',
     name: 'Java Building',
     address: '491 Galle Rd, Colombo 03',
     description: 'Labs, lecture halls, and research centers for STEM programs.',
@@ -163,7 +163,7 @@ export const buildings = [
     actions: ['Programming quiz', 'Lab support', 'Faculty list', 'CS courses']
   },
   {
-    id: 'gymnasium',
+    id: 'iit-city-campus',
     name: 'City Campus',
     address: 'Galle Rd, Colombo 03',
     description: 'Indoor courts, a fitness center, and group classes.',
@@ -310,7 +310,7 @@ export const buildings = [
     actions: ['Fitness classes', 'Equipment booking', 'Staff contact', 'Event schedule']
   },
   {
-    id: 'ramakrishna',
+    id: 'iit-ramakrishna',
     name: 'Foundation Building',
     address: '57 Ramakrishna Rd, Colombo 06',
     description: 'Indoor courts, a fitness center, and group classes.',
@@ -326,7 +326,7 @@ export const buildings = [
     }
   },
   {
-    id: 'dialog',
+    id: 'iit-dialog',
     name: 'Dialog Building',
     address: '524 R. A. De Mel Mawatha, Colombo 03',
     description: 'Indoor courts, a fitness center, and group classes.',
@@ -342,7 +342,7 @@ export const buildings = [
     }
   },
   {
-    id: 'kurunegala',
+    id: 'iit-kurunegala',
     name: 'Regional Centre Kurunegala ',
     address: '109 Bauddhaloka Mawatha, Kurunegala',
     description: 'Indoor courts, a fitness center, and group classes.',
@@ -358,7 +358,7 @@ export const buildings = [
     }
   },
   {
-    id: 'galle',
+    id: 'iit-galle',
     name: 'Regional Centre Galle',
     address: '36A Colombo Rd, Galle',
     description: 'Indoor courts, a fitness center, and group classes.',

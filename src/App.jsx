@@ -19,23 +19,23 @@ function App() {
             <Link to="/" className="flex items-center">
               <img src={logo} alt="IIT Campus Logo" className="h-10 w-auto" />
             </Link>
-            <nav className="flex gap-4 text-sm">
+            <nav className="flex gap-0 text-sm">
               <NavLink
                 to="/"
                 end
                 className={({ isActive }) =>
-                  `px-2 py-1 rounded hover:bg-slate-100 ${isActive ? 'text-blue-600' : 'text-slate-700'}`
+                  `px-2 md:px-4 py-1 rounded-full hover:bg-rose-50 ${isActive ? 'text-rose-600 font-bold' : 'text-slate-700'}`
                 }
               >
                 Home
               </NavLink>
               <NavLink
-                to="/buildings"
+                to="/institutes"
                 className={({ isActive }) =>
-                  `px-2 py-1 rounded hover:bg-slate-100 ${isActive ? 'text-blue-600' : 'text-slate-700'}`
+                  `px-2 md:px-4 py-1 rounded-full hover:bg-rose-50 ${isActive ? 'text-rose-600 font-bold' : 'text-slate-700'}`
                 }
               >
-                Buildings
+                Institutes
               </NavLink>
             </nav>
           </div>
@@ -45,8 +45,8 @@ function App() {
           <div className="pt-16 md:mx-auto h-full">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/buildings" element={<BuildingsList />} />
-              <Route path="/buildings/:buildingId" element={<BuildingDetail />} />
+              <Route path="/institutes" element={<BuildingsList />} />
+              <Route path="/institutes/:buildingId" element={<BuildingDetail />} />
               <Route path="*" element={<div>Page not found</div>} />
 
           <Route path="/common-guidelines" element={<CommonGuidelines />} />

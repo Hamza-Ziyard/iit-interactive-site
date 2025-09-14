@@ -44,7 +44,7 @@ export default function Home() {
               </p>
               <div className="mt-4 md:mt-8">
                 <Link
-                  to="/buildings"
+                  to="/institutes"
                   className="w-auto inline-flex items-center rounded-full bg-gradient-to-r from-rose-400 to-rose-500 text-white shadow-lg px-10 py-4 text-md hover:from-rose-500 hover:to-rose-600 transition-colors"
                 >
                   Start exploring

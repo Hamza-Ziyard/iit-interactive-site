@@ -101,7 +101,7 @@ export default function BuildingsList() {
   }
 
   const handleBuildingDoubleClick = (buildingId, index) => {
-    if (index < 3) navigate(`/buildings/${buildingId}`)
+    if (index < 3) navigate(`/institutes/${buildingId}`)
   }
 
   return (
