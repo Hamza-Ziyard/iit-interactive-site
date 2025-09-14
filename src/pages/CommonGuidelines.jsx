@@ -4,7 +4,7 @@ import { commonGuidelinesContent } from "../data/commonGuidelinesContent";
 
 const Page = React.forwardRef(({ children, className, pageNumber, totalPages }, ref) => (
   <div
-    className={`relative bg-white shadow-lg rounded-lg border border-gray-200 p-8 w-full h-full flex flex-col justify-between ${className}`}
+    className={`relative bg-white shadow-lg rounded-3xl border-8 border-red-800 p-8 w-full h-full flex flex-col justify-between ${className}`}
     ref={ref}
   >
     <div className="text-gray-800 text-lg leading-relaxed text-left flex-1">

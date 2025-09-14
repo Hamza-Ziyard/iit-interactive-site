@@ -4,7 +4,7 @@ import { rolesContent } from "../data/rolesContent";
 
 const Page = React.forwardRef(({ children, className, pageNumber, totalPages }, ref) => (
   <div
-    className={`relative bg-white shadow-lg rounded-lg border border-gray-200 p-8 w-full h-full flex flex-col justify-between ${className}`}
+    className={`relative bg-white shadow-lg rounded-3xl border-8 border-green-900 p-8 w-full h-full flex flex-col justify-between ${className}`}
     ref={ref}
   >
     <div className="text-gray-800 text-lg leading-relaxed text-left flex-1">
