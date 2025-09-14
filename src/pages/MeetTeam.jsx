@@ -38,7 +38,7 @@ export default function MeetTeam() {
       {/* Section 2: Next 6 people */}
       <h1 className="text-4xl font-bold mb-12 text-center">Level 4 Module Leaders</h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-16">
         {secondSection.map((member, index) => (
           <div
             key={index}
