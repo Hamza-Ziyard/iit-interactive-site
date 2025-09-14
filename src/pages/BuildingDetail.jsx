@@ -129,11 +129,11 @@ export default function BuildingDetail() {
               className="w-full flex items-start justify-between p-5"
             >
               <div className="text-left">
-                <div className="text-lg font-semibold text-gray-900">{section.title}</div>
-                <div className="text-xs text-gray-400 mt-1">{section.subtitle}</div>
+                <div className="text-xl font-semibold text-gray-900">{section.title}</div>
+                <div className="text-sm text-gray-500 mt-1">{section.subtitle}</div>
               </div>
               <ChevronDownIcon
-                className={`w-6 h-6 text-gray-400 transition-transform duration-300 ${activeSection === section.key ? 'rotate-180' : ''}`}
+                className={`w-6 h-6 text-gray-500 transition-transform duration-300 ${activeSection === section.key ? 'rotate-180' : ''}`}
               />
             </button>
 
