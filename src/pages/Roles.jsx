@@ -4,7 +4,7 @@ import { rolesContent } from "../data/rolesContent";
 
 const Page = React.forwardRef(({ children, className, pageNumber, totalPages }, ref) => (
   <div
-    className={`relative bg-white shadow-lg rounded-3xl border-8 border-green-900 p-8 w-full h-full flex flex-col justify-between ${className}`}
+    className={`relative bg-white sbg-slate-50 shadow-2xl rounded-3xl border-8 border-green-900 p-8 w-full h-full flex flex-col justify-between ${className}`}
     ref={ref}
   >
     <div className="text-gray-800 text-lg leading-relaxed text-left flex-1">
@@ -45,15 +45,15 @@ export default function Roles() {
           {rolesContent.map((page, index) => (
             <Page key={index} pageNumber={index + 1} totalPages={totalPages}>
               {page.type === "cover" && (
-                <div className="rounded-3xl flex flex-col items-center gap-8 h-full">
+                <div className="rounded-3xl flex flex-col items-center gap-8 h-full pb-8">
                   {page.image && (
                     <img
                       src={page.image}
-                      className="max-h-[400px] w-auto object-contain rounded-3xl"
+                      className="max-h-[300px] w-auto object-contain rounded-full p-8 mt-24 bg-green-50"
                       alt=""
                     />
                   )}
-                  <h1 className="text-4xl font-bold text-center px-5">
+                  <h1 className="text-4xl font-bold text-center px-10 leading-[1.5]">
                     {page.title}
                   </h1>
                 </div>
