@@ -150,7 +150,7 @@ export default function BuildingsList() {
                           {index < 3 && (
                             <div>
                               <button
-                                onClick={(e) => { e.stopPropagation(); navigate(`/buildings/${b.id}`) }}
+                                onClick={(e) => { e.stopPropagation(); navigate(`/institutes/${b.id}`) }}
                                 className="p-2 md:p-3 border border-gray-300 rounded-full hover:bg-black hover:text-white hover:border-black"
                               >
                                 <ChevronRightIcon className="h-3 w-3 md:h-4 md:w-4 stroke-2" />
@@ -293,7 +293,7 @@ function LeafletMap({ selected, highlightedMarker, mapRef, onMarkerClick, userLo
             </div>
             {i < 3 && (
               <Link
-                to={`/buildings/${b.id}`}
+                to={`/institutes/${b.id}`}
                 className="text-center mt-3 block px-3 py-2 rounded-full bg-blue-50 text-blue-600 hover:bg-blue-100"
               >
                 Explore

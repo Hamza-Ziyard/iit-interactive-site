@@ -31,7 +31,7 @@ export default function BuildingDetail() {
     return (
       <div className="p-6">
         <p className="text-red-600">Building not found.</p>
-        <Link className="text-blue-600 hover:underline" to="/buildings">Back to list</Link>
+        <Link className="text-blue-600 hover:underline" to="/institutes">Back to list</Link>
       </div>
     )
   }
