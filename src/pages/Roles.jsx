@@ -10,7 +10,7 @@ const Page = React.forwardRef(({ children, className, pageNumber, totalPages }, 
     <div className="text-gray-800 text-lg leading-relaxed text-left flex-1">
       {children}
     </div>
-    <div className="text-xs text-center text-gray-400 mt-4 absolute bottom-4 right-4">
+    <div className="text-xs text-center text-gray-400 mt-4 absolute bottom-4 right-6">
       {pageNumber} of {totalPages}
     </div>
   </div>
