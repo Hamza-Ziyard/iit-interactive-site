@@ -25,8 +25,8 @@ export default function Roles() {
   return (
     <div className="w-full">
       {/* Desktop flipbook */}
-      <div className="hidden md:flex flex-col items-center justify-center h-screen px-4">
-        <h1 className="text-6xl font-bold mb-16">Roles</h1>
+      <div className="hidden md:flex flex-col items-center justify-center px-4">
+        <h1 className="text-5xl font-bold pt-16 mb-16">Roles</h1>
 
         <HTMLFlipBook
           width={600}
@@ -37,6 +37,7 @@ export default function Roles() {
           maxHeight={800}
           maxShadowOpacity={0.5}
           mobileScrollSupport={true}
+          flippingTime={500}
           className="rounded-xl"
           ref={flipBook}
           onFlip={(e) => setCurrentPage(e.data)}
