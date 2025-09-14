@@ -20,7 +20,7 @@ export const commonGuidelinesContent = [
     {
       type: "cover",
       title: "Dress Code",
-      image: "/img/guidelines-book/book-intro.webp",
+      image: "/img/guidelines-book/book-dress.webp",
     },
     {
       type: "text",
@@ -52,7 +52,7 @@ export const commonGuidelinesContent = [
     {
       type: "cover",
       title: "Health and Safety",
-      image: "/img/spencer.webp",
+      image: "/img/guidelines-book/book-health.webp",
     },
     {
       type: "text",
@@ -86,7 +86,7 @@ export const commonGuidelinesContent = [
     {
       type: "cover",
       title: "Class Rooms, Lobby, Corridors and Canteen - I",
-      image: "/img/spencer.webp",
+      image: "/img/guidelines-book/book-classroom.webp",
     },
     {
       type: "text",
@@ -116,7 +116,7 @@ export const commonGuidelinesContent = [
     {
         type: "cover",
         title: "Class Rooms, Lobby, Corridors and Canteen - II",
-        image: "/img/spencer.webp",
+        image: "/img/guidelines-book/book-classroom.webp",
     },
     {
         type: "text",
@@ -134,7 +134,7 @@ export const commonGuidelinesContent = [
     {
         type: "cover",
         title: "Library and IT Laboratories - I",
-        image: "/img/spencer.webp",
+        image: "/img/guidelines-book/book-library.webp",
     },
     {
         type: "text",
@@ -172,7 +172,7 @@ export const commonGuidelinesContent = [
     {
         type: "cover",
         title: "Library and IT Laboratories - II",
-        image: "/img/spencer.webp",
+        image: "/img/guidelines-book/book-library.webp",
     },
     {
         type: "text",
@@ -210,7 +210,7 @@ export const commonGuidelinesContent = [
     {
         type: "cover",
         title: "Library and IT Laboratories - III",
-        image: "/img/spencer.webp",
+        image: "/img/guidelines-book/book-library.webp",
     },
     {
         type: "text",
@@ -228,7 +228,7 @@ export const commonGuidelinesContent = [
     {
         type: "cover",
         title: "General Conduct and Behaviour - I",
-        image: "/img/spencer.webp",
+        image: "/img/guidelines-book/book-conduct.webp",
     },
     {
         type: "text",
@@ -262,7 +262,7 @@ export const commonGuidelinesContent = [
     {
         type: "cover",
         title: "General Conduct and Behaviour - II",
-        image: "/img/spencer.webp",
+        image: "/img/guidelines-book/book-conduct.webp",
     },
     {
         type: "text",
@@ -300,7 +300,7 @@ export const commonGuidelinesContent = [
     {
         type: "cover",
         title: "General Conduct and Behaviour - III",
-        image: "/img/spencer.webp",
+        image: "/img/guidelines-book/book-conduct.webp",
     },
     {
         type: "text",
@@ -334,7 +334,7 @@ export const commonGuidelinesContent = [
     {
         type: "cover",
         title: "General Conduct and Behaviour - IV",
-        image: "/img/spencer.webp",
+        image: "/img/guidelines-book/book-conduct.webp",
     },
     {
         type: "text",
@@ -356,7 +356,7 @@ export const commonGuidelinesContent = [
     {
         type: "cover",
         title: "Sanctions, Review of the Code of Conduct",
-        image: "/img/spencer.webp",
+        image: "/img/guidelines-book/book-sanctions.webp",
     },
     {
         type: "text",
