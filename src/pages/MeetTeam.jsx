@@ -18,16 +18,19 @@ export default function MeetTeam() {
             key={index}
             className="flex flex-col gap-2 items-center bg-white rounded-3xl py-16 px-6 border-2"
           >
-            {/* {member.image && (
+            {member.image && (
               <img
                 src={member.image}
                 alt={member.title}
-                className="w-40 h-40 object-cover rounded-full mb-4"
+                className="w-40 h-40 object-cover bg-gray-100 p-4 rounded-full mb-4"
               />
-            )} */}
+            )}
             <h2 className="text-xl font-semibold text-center">{member.title}</h2>
+            <div className="w-full border-t border-b border-gray-200 mt-2 py-3 ">
+
             <p className="text-sm text-gray-600 text-center">{member.position}</p>
-            <Link className="text-sm text-blue-600 text-center">{member.email}</Link>
+            </div>
+            <Link href={`mailto:${member.email}`} className="text-sm text-blue-600 text-center mt-2">{member.email}</Link>
           </div>
         ))}
       </div>
@@ -41,16 +44,21 @@ export default function MeetTeam() {
             key={index}
             className="flex flex-col gap-2 items-center bg-white rounded-3xl py-16 px-6 border-2"
           >
-            {/* {member.image && (
+            {member.image && (
               <img
                 src={member.image}
                 alt={member.title}
-                className="w-32 h-32 object-cover rounded-full mb-4"
+                className="w-40 h-40 object-cover bg-gray-100 p-4 rounded-full mb-4"
               />
-            )} */}
+            
+            )}
             <h2 className="text-lg font-semibold text-center">{member.title}</h2>
+            <div className="w-full border-t border-b border-gray-200 mt-2 py-3 ">
+
             <p className="text-sm text-gray-600 text-center">{member.position}</p>
-            <Link className="text-sm text-blue-600 text-center">{member.email}</Link>
+            <p className="text-xs  mt-2 rounded-full text-gray-600 text-center">{member.module}</p>
+            </div>
+            <Link href={`mailto:${member.email}`}  className="text-sm text-blue-600 text-center mt-2">{member.email}</Link>
           </div>
         ))}
       </div>
