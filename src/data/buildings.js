@@ -2,7 +2,7 @@ export const buildings = [
   {
     id: 'library',
     name: 'GP Square',
-    address: '10 Trelawney Pl, Colombo 00400',
+    address: '10 Trelawney Pl, Colombo 04',
     description: 'A multi-story library with study rooms and a quiet floor.',
     distanceKm: 1.2,
     tags: ['Computing'],
@@ -108,7 +108,7 @@ export const buildings = [
   {
     id: 'science-hall',
     name: 'Java Building',
-    address: '491 Galle Rd, Colombo 00300, Sri Lanka',
+    address: '491 Galle Rd, Colombo 03',
     description: 'Labs, lecture halls, and research centers for STEM programs.',
     distanceKm: 3.2,
     tags: ['Computing'],
@@ -165,7 +165,7 @@ export const buildings = [
   {
     id: 'gymnasium',
     name: 'City Campus',
-    address: 'Galle Rd, Colombo 00300, Sri Lanka',
+    address: 'Galle Rd, Colombo 03',
     description: 'Indoor courts, a fitness center, and group classes.',
     distanceKm: 5.7,
     tags: ['Computing'],
@@ -312,7 +312,7 @@ export const buildings = [
   {
     id: 'ramakrishna',
     name: 'Foundation Building',
-    address: '57 Ramakrishna Rd, Colombo 00600',
+    address: '57 Ramakrishna Rd, Colombo 06',
     description: 'Indoor courts, a fitness center, and group classes.',
     distanceKm: 5.7,
     tags: ['Computing'],
@@ -328,7 +328,7 @@ export const buildings = [
   {
     id: 'dialog',
     name: 'Dialog Building',
-    address: '524 R. A. De Mel Mawatha, Colombo',
+    address: '524 R. A. De Mel Mawatha, Colombo 03',
     description: 'Indoor courts, a fitness center, and group classes.',
     distanceKm: 5.7,
     tags: ['Computing'],
@@ -360,7 +360,7 @@ export const buildings = [
   {
     id: 'galle',
     name: 'Regional Centre Galle',
-    address: '36A Colombo Rd, Galle 80000',
+    address: '36A Colombo Rd, Galle',
     description: 'Indoor courts, a fitness center, and group classes.',
     distanceKm: 5.7,
     tags: ['Computing'],
