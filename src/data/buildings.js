@@ -16,22 +16,22 @@ export const buildings = [
         title: 'Ground Floor',
         subtitle: 'Basement parking area ',
         items: [
-          { icon: 'BuildingIcon', label: 'Staff parking', description: 'Dedicated parking spaces for faculty and staff members with 24/7 access.' },
-          { icon: 'BuildingIcon', label: 'Student parking', description: 'Student parking area with security monitoring and easy access to main entrance.' },
-          { icon: 'BuildingIcon', label: 'Front Desk & Fingerprint Scanners', description: 'Student parking area with security monitoring and easy access to main entrance.' },
-          { icon: 'BuildingIcon', label: 'Cafetaria', description: 'Student parking area with security monitoring and easy access to main entrance.' },
-          { icon: 'BuildingIcon', label: 'Common Seating Area', description: 'Student parking area with security monitoring and easy access to main entrance.' },
+          { icon: 'Parking', label: 'Staff parking', description: 'Dedicated parking spaces for faculty and staff members with 24/7 access.' },
+          { icon: 'Parking', label: 'Student parking', description: 'Student parking area with security monitoring and easy access to main entrance.' },
+          { icon: 'Admin', label: 'Front Desk & Fingerprint Scanners', description: 'Student parking area with security monitoring and easy access to main entrance.' },
+          { icon: 'Cafe', label: 'Cafetaria', description: 'Student parking area with security monitoring and easy access to main entrance.' },
+          { icon: 'Gathering', label: 'Common Seating Area', description: 'Student parking area with security monitoring and easy access to main entrance.' },
         ],
       },
       {
         key: 'level1',
         title: 'Level 01',
-        subtitle: 'HR, Classrooms, SRU,',
+        subtitle: 'HR, Classrooms, SRU',
         items: [
-          { icon: 'CoffeeIcon', label: 'HR Department', description: 'Modern cafeteria serving breakfast, lunch, and snacks with seating for 200+ students.' },
-          { icon: 'UsersIcon', label: 'Student Relations Unit', description: 'Relaxation area with comfortable seating, games, and study spaces for students.' },
-          { icon: 'BuildingIcon', label: 'Classrooms (1LA,1LB,1LC,1LD,1LE,1LF)', description: 'Information desk and administrative services for students and visitors.' },
-          { icon: 'BuildingIcon', label: 'Manager - Center Operations)', description: 'Information desk and administrative services for students and visitors.' },
+          { icon: 'Admin', label: 'HR Department', description: 'Modern cafeteria serving breakfast, lunch, and snacks with seating for 200+ students.' },
+          { icon: 'Admin', label: 'Student Relations Unit', description: 'Relaxation area with comfortable seating, games, and study spaces for students.' },
+          { icon: 'Classroom', label: 'Classrooms (1LA,1LB,1LC,1LD,1LE,1LF)', description: 'Information desk and administrative services for students and visitors.' },
+          { icon: 'Admin', label: 'Manager - Center Operations', description: 'Information desk and administrative services for students and visitors.' },
 
         ],
       },
@@ -40,9 +40,9 @@ export const buildings = [
         title: 'Level 02',
         subtitle: 'IT Department, Classrooms, Labs',
         items: [
-          { icon: 'BuildingIcon', label: 'IT Department', description: 'Large capacity lecture hall with modern AV equipment and seating for 150 students.' },
-          { icon: 'BuildingIcon', label: 'Computer labs', description: 'High-performance computing lab with 50 workstations and specialized software.' },
-          { icon: 'BuildingIcon', label: 'Classrooms', description: 'Quiet study area with individual study carrels and group study tables.' },
+          { icon: 'Admin', label: 'IT Department', description: 'Large capacity lecture hall with modern AV equipment and seating for 150 students.' },
+          { icon: 'Classroom', label: 'Computer labs', description: 'High-performance computing lab with 50 workstations and specialized software.' },
+          { icon: 'Classroom', label: 'Classrooms', description: 'Quiet study area with individual study carrels and group study tables.' },
         ],
       },
       {
@@ -50,9 +50,9 @@ export const buildings = [
         title: 'Level 03',
         subtitle: 'Staff Room, Classrooms',
         items: [
-          { icon: 'BuildingIcon', label: 'Staff Room', description: 'Medium capacity lecture hall with interactive whiteboard and flexible seating.' },
-          { icon: 'BuildingIcon', label: 'Classrooms', description: 'Specialized lab for software development and programming courses.' },
-          { icon: 'BuildingIcon', label: 'Common Seating Area', description: 'Advanced research facility with specialized equipment for faculty research.' },
+          { icon: 'Teacher', label: 'Staff Room', description: 'Medium capacity lecture hall with interactive whiteboard and flexible seating.' },
+          { icon: 'Classroom', label: 'Classrooms', description: 'Specialized lab for software development and programming courses.' },
+          { icon: 'Gathering', label: 'Common Seating Area', description: 'Advanced research facility with specialized equipment for faculty research.' },
         ],
       },
       {
@@ -60,8 +60,8 @@ export const buildings = [
         title: 'Level 04',
         subtitle: 'Admin, Classrooms',
         items: [
-          { icon: 'BuildingIcon', label: 'Admin Department', description: 'Smaller lecture hall for seminars and discussion-based classes.' },
-          { icon: 'BuildingIcon', label: 'Classrooms', description: 'Computer networking laboratory with hands-on equipment and simulation tools.' },
+          { icon: 'Admin', label: 'Admin Department', description: 'Smaller lecture hall for seminars and discussion-based classes.' },
+          { icon: 'Classroom', label: 'Classrooms', description: 'Computer networking laboratory with hands-on equipment and simulation tools.' },
         ],
       },
       {
@@ -69,9 +69,9 @@ export const buildings = [
         title: 'Level 05',
         subtitle: 'Lecture halls, StaffRoom',
         items: [
-          { icon: 'BuildingIcon', label: 'Lecture hall ', description: 'Conference-style lecture hall with presentation capabilities.' },
-          { icon: 'BuildingIcon', label: 'Staff Room', description: 'Specialized laboratory for database management and data science courses.' },
-          { icon: 'BuildingIcon', label: 'Common Seating Area', description: 'Small meeting rooms for group discussions and project work.' },
+          { icon: 'Classroom', label: 'Lecture hall ', description: 'Conference-style lecture hall with presentation capabilities.' },
+          { icon: 'Teacher', label: 'Staff Room', description: 'Specialized laboratory for database management and data science courses.' },
+          { icon: 'Gathering', label: 'Common Seating Area', description: 'Small meeting rooms for group discussions and project work.' },
         ],
       },
       {
@@ -79,17 +79,17 @@ export const buildings = [
         title: 'Level 06',
         subtitle: 'Board Room, Staff Room',
         items: [
-          { icon: 'BuildingIcon', label: 'Board Meeting Room', description: 'Advanced lecture hall with cutting-edge technology and flexible layout.' },
-          { icon: 'BuildingIcon', label: 'Dean & Associate Deans Office', description: 'State-of-the-art laboratory for artificial intelligence and machine learning research.' },
-          { icon: 'BuildingIcon', label: 'Staff Seating Area', description: 'Large conference room for departmental meetings and presentations.' },
+          { icon: 'Teacher', label: 'Board Meeting Room', description: 'Advanced lecture hall with cutting-edge technology and flexible layout.' },
+          { icon: 'Teacher', label: 'Dean & Associate Deans Office', description: 'State-of-the-art laboratory for artificial intelligence and machine learning research.' },
+          { icon: 'Teacher', label: 'Staff Seating Area', description: 'Large conference room for departmental meetings and presentations.' },
         ],
       },
       {
         key: 'level7',
         title: 'Level 07',
-        subtitle: 'Lecture hall,',
+        subtitle: 'Lecture hall',
         items: [
-          { icon: 'BuildingIcon', label: 'Main Lecture hall ', description: 'Advanced lecture hall with cutting-edge technology and flexible layout.' },
+          { icon: 'Classroom', label: 'Main Lecture hall ', description: 'Advanced lecture hall with cutting-edge technology and flexible layout.' },
         ],
       },
     ],
@@ -122,8 +122,8 @@ export const buildings = [
         title: '01st Floor',
         subtitle: 'Lecture Hall, Tutorial Rooms',
         items: [
-          { icon: 'UsersIcon', label: 'Lecture Hall (1LA)', description: 'One-stop center for student registration, academic advising, and support services.' },
-          { icon: 'BuildingIcon', label: 'Tutorial Rooms (1LB,1LC,1LD)', description: 'Welcome desk and information center for visitors and students.' },
+          { icon: 'Classroom', label: 'Lecture Hall (1LA)', description: 'One-stop center for student registration, academic advising, and support services.' },
+          { icon: 'Classroom', label: 'Tutorial Rooms (1LB,1LC,1LD)', description: 'Welcome desk and information center for visitors and students.' },
         ],
       },
       {
@@ -131,9 +131,9 @@ export const buildings = [
         title: '02nd Floor',
         subtitle: 'Lecture Hall, Tutorial Rooms, Academic Staff Room',
         items: [
-          { icon: 'BuildingIcon', label: 'Lecture Hall (2LA)', description: 'Modern programming laboratory with 40 workstations and development tools.' },
-          { icon: 'BuildingIcon', label: 'Tutorial Rooms (2LB,2LC)', description: 'Specialized lab for software development projects and team collaboration.' },
-          { icon: 'BuildingIcon', label: 'Academic Staff Room', description: 'Large lecture hall with multimedia capabilities for computer science courses.' },
+          { icon: 'Classroom', label: 'Lecture Hall (2LA)', description: 'Modern programming laboratory with 40 workstations and development tools.' },
+          { icon: 'Classroom', label: 'Tutorial Rooms (2LB,2LC)', description: 'Specialized lab for software development projects and team collaboration.' },
+          { icon: 'Teacher', label: 'Academic Staff Room', description: 'Large lecture hall with multimedia capabilities for computer science courses.' },
         ],
       },
       {
@@ -141,8 +141,8 @@ export const buildings = [
         title: '03rd Floor',
         subtitle: 'Lecture Hall, Tutorial Rooms',
         items: [
-            { icon: 'UsersIcon', label: 'Lecture Hall (3LA)', description: 'One-stop center for student registration, academic advising, and support services.' },
-            { icon: 'BuildingIcon', label: 'Tutorial Rooms (3LB,3LC,3LD)', description: 'Welcome desk and information center for visitors and students.' },
+            { icon: 'Classroom', label: 'Lecture Hall (3LA)', description: 'One-stop center for student registration, academic advising, and support services.' },
+            { icon: 'Classroom', label: 'Tutorial Rooms (3LB,3LC,3LD)', description: 'Welcome desk and information center for visitors and students.' },
         ],
       },
       {
@@ -150,7 +150,7 @@ export const buildings = [
         title: '04th Floor',
         subtitle: 'Student Common Area',
         items: [
-          { icon: 'BuildingIcon', label: 'AI research lab', description: 'Advanced artificial intelligence laboratory with high-performance computing resources.' },
+          { icon: 'Classroom', label: 'AI Research Lab', description: 'Advanced artificial intelligence laboratory with high-performance computing resources.' },
         ],
       }
     ],
@@ -179,10 +179,10 @@ export const buildings = [
         title: 'Ground Floor',
         subtitle: 'Marketing, Finance, Registry Services, Professional Development Unit (PDU)',
         items: [
-          { icon: 'BuildingIcon', label: 'Student parking', description: 'Convenient parking spaces for visitors and students.' },
-          { icon: 'BuildingIcon', label: 'Marketing', description: 'Reserved parking for Spencer building staff and maintenance personnel.' },
-          { icon: 'BuildingIcon', label: 'Registry', description: 'Reserved parking for Spencer building staff and maintenance personnel.' },
-          { icon: 'BuildingIcon', label: 'Professional Development Unit (PDU)', description: 'Reserved parking for Spencer building staff and maintenance personnel.' },
+          { icon: 'Parking', label: 'Student parking', description: 'Convenient parking spaces for visitors and students.' },
+          { icon: 'Admin', label: 'Marketing', description: 'Reserved parking for Spencer building staff and maintenance personnel.' },
+          { icon: 'Admin', label: 'Registry', description: 'Reserved parking for Spencer building staff and maintenance personnel.' },
+          { icon: 'Admin', label: 'Professional Development Unit (PDU)', description: 'Reserved parking for Spencer building staff and maintenance personnel.' },
         ],
       },
       {
@@ -190,19 +190,19 @@ export const buildings = [
         title: 'Mezzanine 01 Floor',
         subtitle: 'Staff Room, Discipline Coordinator',
         items: [
-          { icon: 'UsersIcon', label: 'Staff Common Area', description: 'Welcome desk and information center for Spencer building visitors.' },
-          { icon: 'BuildingIcon', label: 'Senior Discipline Coordinator', description: 'Spacious lobby with seating and information displays about building facilities.' },        ],
+          { icon: 'Teacher', label: 'Staff Common Area', description: 'Welcome desk and information center for Spencer building visitors.' },
+          { icon: 'Teacher', label: 'Senior Discipline Coordinator', description: 'Spacious lobby with seating and information displays about building facilities.' },        ],
       },
       {
         key: 'level2',
         title: 'Mezzanine 02 Floor',
         subtitle: 'Chief Operating Officer (COO), Professor Room 1&2, Boardroom, Academic Staff, Head of PDU',
         items: [
-          { icon: 'BuildingIcon', label: 'Chief Operating Officer (COO)', description: 'Modern cardio equipment including treadmills, bikes, and elliptical machines.' },
-          { icon: 'BuildingIcon', label: 'Professor Room 1&2', description: 'Comprehensive weight training facility with free weights and machines.' },
-          { icon: 'UsersIcon', label: 'Boardroom', description: 'Multi-purpose studio for group fitness classes and personal training sessions.' },
-          { icon: 'UsersIcon', label: 'Academic Staff', description: 'Multi-purpose studio for group fitness classes and personal training sessions.' },
-          { icon: 'UsersIcon', label: 'Head of PDU', description: 'Multi-purpose studio for group fitness classes and personal training sessions.' },
+          { icon: 'Teacher', label: 'Chief Operating Officer (COO)', description: 'Modern cardio equipment including treadmills, bikes, and elliptical machines.' },
+          { icon: 'Teacher', label: 'Professor Room 1&2', description: 'Comprehensive weight training facility with free weights and machines.' },
+          { icon: 'Teacher', label: 'Boardroom', description: 'Multi-purpose studio for group fitness classes and personal training sessions.' },
+          { icon: 'Teacher', label: 'Academic Staff', description: 'Multi-purpose studio for group fitness classes and personal training sessions.' },
+          { icon: 'Teacher', label: 'Head of PDU', description: 'Multi-purpose studio for group fitness classes and personal training sessions.' },
 
         ],
       },
@@ -211,9 +211,9 @@ export const buildings = [
         title: 'Level 03',
         subtitle: 'Parking Facilities',
         items: [
-          { icon: 'BuildingIcon', label: 'P1 Floor - Parking', description: 'Full-size basketball court with professional flooring and lighting.' },
-          { icon: 'BuildingIcon', label: 'P2 Floor - Parking', description: 'Multiple badminton courts with proper netting and court markings.' },
-          { icon: 'BuildingIcon', label: 'P3 Floor - Parking', description: 'Table tennis facility with multiple tables and equipment storage.' },
+          { icon: 'Parking', label: 'P1 Floor - Parking', description: 'Full-size basketball court with professional flooring and lighting.' },
+          { icon: 'Parking', label: 'P2 Floor - Parking', description: 'Multiple badminton courts with proper netting and court markings.' },
+          { icon: 'Parking', label: 'P3 Floor - Parking', description: 'Table tennis facility with multiple tables and equipment storage.' },
         ],
       },
       {
@@ -221,7 +221,7 @@ export const buildings = [
         title: '01st Floor',
         subtitle: 'Library',
         items: [
-          { icon: 'BuildingIcon', label: 'Library', description: 'Large conference room with presentation equipment and seating for 50 people.' },
+          { icon: 'Library', label: 'Library', description: 'Large conference room with presentation equipment and seating for 50 people.' },
         ],
       },
       {
@@ -229,7 +229,7 @@ export const buildings = [
         title: '02nd Floor',
         subtitle: 'Examination Hall',
         items: [
-          { icon: 'BuildingIcon', label: 'Examination Hall', description: 'Large auditorium with stage and seating for 300+ people for events and presentations.' },
+          { icon: 'Classroom', label: 'Examination Hall', description: 'Large auditorium with stage and seating for 300+ people for events and presentations.' },
         ],
       },
       {
@@ -237,9 +237,9 @@ export const buildings = [
         title: '03rd Floor',
         subtitle: 'Lecture Halls, Tutorial Rooms, PDU',
         items: [
-          { icon: 'BuildingIcon', label: 'Lecture Hall (3LA)', description: 'Large auditorium with stage and seating for 300+ people for events and presentations.' },
-          { icon: 'BuildingIcon', label: 'Tutorial Rooms (3LB, 3LC, 3LD)', description: 'Flexible exhibition space for displays, fairs, and special events.' },
-          { icon: 'BuildingIcon', label: 'Professional Development Unit (Backend)', description: 'Storage facilities for event equipment and building maintenance supplies.' },
+          { icon: 'Classroom', label: 'Lecture Hall (3LA)', description: 'Large auditorium with stage and seating for 300+ people for events and presentations.' },
+          { icon: 'Classroom', label: 'Tutorial Rooms (3LB, 3LC, 3LD)', description: 'Flexible exhibition space for displays, fairs, and special events.' },
+          { icon: 'Teacher', label: 'Professional Development Unit (Backend)', description: 'Storage facilities for event equipment and building maintenance supplies.' },
         ],
       },
       {
@@ -247,9 +247,9 @@ export const buildings = [
         title: '04th Floor',
         subtitle: 'Lecture Halls, Tutorial Rooms, SRU',
         items: [
-            { icon: 'BuildingIcon', label: 'Lecture Hall (4LA)', description: 'Large auditorium with stage and seating for 300+ people for events and presentations.' },
-            { icon: 'BuildingIcon', label: 'Tutorial Rooms (4LB, 4LC, 4LD)', description: 'Flexible exhibition space for displays, fairs, and special events.' },
-            { icon: 'BuildingIcon', label: 'Student Relations Unit', description: 'Storage facilities for event equipment and building maintenance supplies.' },
+            { icon: 'Classroom', label: 'Lecture Hall (4LA)', description: 'Large auditorium with stage and seating for 300+ people for events and presentations.' },
+            { icon: 'Classroom', label: 'Tutorial Rooms (4LB, 4LC, 4LD)', description: 'Flexible exhibition space for displays, fairs, and special events.' },
+            { icon: 'Admin', label: 'Student Relations Unit', description: 'Storage facilities for event equipment and building maintenance supplies.' },
         ],
       },
       {
@@ -257,10 +257,10 @@ export const buildings = [
         title: '05th Floor',
         subtitle: 'IT Department, Manager Center Operations, Lecture Hall, Tutorial Rooms',
         items: [
-          { icon: 'BuildingIcon', label: 'IT Department', description: 'Large auditorium with stage and seating for 300+ people for events and presentations.' },
-          { icon: 'BuildingIcon', label: 'Lecture Hall (5LA)', description: 'Flexible exhibition space for displays, fairs, and special events.' },
-          { icon: 'BuildingIcon', label: 'Tutorial Rooms (5LB, 5LC, 5LD)', description: 'Storage facilities for event equipment and building maintenance supplies.' },
-          { icon: 'BuildingIcon', label: 'Manager Center Operations', description: 'Storage facilities for event equipment and building maintenance supplies.' },
+          { icon: 'Admin', label: 'IT Department', description: 'Large auditorium with stage and seating for 300+ people for events and presentations.' },
+          { icon: 'Classroom', label: 'Lecture Hall (5LA)', description: 'Flexible exhibition space for displays, fairs, and special events.' },
+          { icon: 'Classroom', label: 'Tutorial Rooms (5LB, 5LC, 5LD)', description: 'Storage facilities for event equipment and building maintenance supplies.' },
+          { icon: 'Teacher', label: 'Manager Center Operations', description: 'Storage facilities for event equipment and building maintenance supplies.' },
 
         ],
       },
@@ -269,9 +269,9 @@ export const buildings = [
         title: '06th Floor',
         subtitle: 'Lecture Halls, Tutorial Rooms, Registry (Backend)',
         items: [
-          { icon: 'BuildingIcon', label: 'Lecture Halls (6LA)', description: 'Large auditorium with stage and seating for 300+ people for events and presentations.' },
-          { icon: 'BuildingIcon', label: 'Tutorial Rooms (6LB, 6LC, 6LD)', description: 'Flexible exhibition space for displays, fairs, and special events.' },
-          { icon: 'BuildingIcon', label: 'Registry (Backend)', description: 'Storage facilities for event equipment and building maintenance supplies.' },
+          { icon: 'Classroom', label: 'Lecture Halls (6LA)', description: 'Large auditorium with stage and seating for 300+ people for events and presentations.' },
+          { icon: 'Classroom', label: 'Tutorial Rooms (6LB, 6LC, 6LD)', description: 'Flexible exhibition space for displays, fairs, and special events.' },
+          { icon: 'Admin', label: 'Registry (Backend)', description: 'Storage facilities for event equipment and building maintenance supplies.' },
         ],
       },
       {
@@ -279,9 +279,9 @@ export const buildings = [
         title: '07th Floor',
         subtitle: 'Academy for Teaching & Learning Effectiveness (ATLE)',
         items: [
-          { icon: 'BuildingIcon', label: 'Academy for Teaching & Learning Effectiveness (ATLE)', description: 'Large auditorium with stage and seating for 300+ people for events and presentations.' },
-          { icon: 'BuildingIcon', label: 'Lecture Hall (7LA)', description: 'Flexible exhibition space for displays, fairs, and special events.' },
-          { icon: 'BuildingIcon', label: 'Tutorial Rooms (7LB, 7LC, 7LD)', description: 'Storage facilities for event equipment and building maintenance supplies.' },
+          { icon: 'Admin', label: 'Academy for Teaching & Learning Effectiveness (ATLE)', description: 'Large auditorium with stage and seating for 300+ people for events and presentations.' },
+          { icon: 'Classroom', label: 'Lecture Hall (7LA)', description: 'Flexible exhibition space for displays, fairs, and special events.' },
+          { icon: 'Classroom', label: 'Tutorial Rooms (7LB, 7LC, 7LD)', description: 'Storage facilities for event equipment and building maintenance supplies.' },
         ],
       },
       {
@@ -289,7 +289,7 @@ export const buildings = [
         title: '08th Floor',
         subtitle: 'Cafateria',
         items: [
-          { icon: 'BuildingIcon', label: 'Cafateria', description: 'Large auditorium with stage and seating for 300+ people for events and presentations.' },
+          { icon: 'Cafe', label: 'Cafeteria', description: 'Large auditorium with stage and seating for 300+ people for events and presentations.' },
         ],
       },
     ],
