@@ -104,13 +104,17 @@ export default function BuildingDetail() {
     <div className="h-1/2 md:h-full md:flex gap-8"> 
       {/* Left visual panel */}
       <div className="relative h-full flex-1 mb-4">
-        <div className="h-full w-full rounded-3xl overflow-hidden shadow-inner bg-sky-100 relative flex items-center justify-center">
+        <div className="h-full w-full rounded-3xl overflow-hidden shadow-inner bg-sky-50 relative flex items-center justify-center">
           {activeSection === null && (
-            <img
-              src={`/img/${building.icon}.webp`}
-              alt={building.name}
-              className="w-full h-auto object-contain opacity-90"
-            />
+            <div>
+              <h1 className='text-2xl font-bold md:text-4xl mb-4'>IIT - {building.name}</h1>
+              <p className='text-md text-gray-500 mb-4'>{building.address}</p>
+              <img
+                src={`/img/${building.icon}.webp`}
+                alt={building.name}
+                className="w-full h-auto object-contain opacity-90"
+              />
+            </div>
           )}
           {sections.map((s) => (
             <img
