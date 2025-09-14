@@ -30,7 +30,7 @@ export default function MeetTeam() {
 
             <p className="text-sm text-gray-600 text-center">{member.position}</p>
             </div>
-            <Link href={`mailto:${member.email}`} className="text-sm text-blue-600 text-center mt-2">{member.email}</Link>
+            <Link to={`mailto:${member.email}`} className="text-sm text-blue-600 text-center mt-2">{member.email}</Link>
           </div>
         ))}
       </div>
@@ -58,7 +58,7 @@ export default function MeetTeam() {
             <p className="text-sm text-gray-600 text-center">{member.position}</p>
             <p className="text-xs  mt-2 rounded-full text-gray-600 text-center">{member.module}</p>
             </div>
-            <Link href={`mailto:${member.email}`}  className="text-sm text-blue-600 text-center mt-2">{member.email}</Link>
+            <Link to={`mailto:${member.email}`}  className="text-sm text-blue-600 text-center mt-2">{member.email}</Link>
           </div>
         ))}
       </div>
