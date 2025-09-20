@@ -22,7 +22,7 @@ export default function MeetTeam() {
               <img
                 src={member.image}
                 alt={member.title}
-                className="w-40 h-40 object-cover bg-gray-100 p-4 rounded-full mb-4"
+                className="w-40 h-40 object-cover bg-gray-100 p-1 rounded-full mb-4"
               />
             )}
             <h2 className="text-xl font-semibold text-center">{member.title}</h2>
@@ -48,7 +48,7 @@ export default function MeetTeam() {
               <img
                 src={member.image}
                 alt={member.title}
-                className="w-40 h-40 object-cover bg-gray-100 p-4 rounded-full mb-4"
+                className="w-40 h-40 object-cover bg-gray-100 p-1 rounded-full mb-4"
               />
             
             )}
