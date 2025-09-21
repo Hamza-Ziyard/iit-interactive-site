@@ -18,7 +18,7 @@ export const meetTeamContent = [
       title: "Prof. Nihal Kodikara",
       image: "/img/meet-team-book/Nihal Kodikara.webp",
       email : "nihal.k@iit.ac.lk",
-      position : "Head of Department - IIT School of Computing"
+      position : "Associate Deen - IIT School of Computing"
     },
 
     {
