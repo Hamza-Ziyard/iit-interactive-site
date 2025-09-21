@@ -1,18 +1,11 @@
 import './App.css'
-import { BrowserRouter, Routes, Route, Link, NavLink } from 'react-router-dom'
-import Home from './pages/Home'
-import BuildingsList from './pages/BuildingsList'
-import BuildingDetail from './pages/BuildingDetail'
-import CommonGuidelines from './pages/CommonGuidelines'
-import Roles from './pages/Roles'
-import MeetTeam from './pages/MeetTeam'
+import { Link, NavLink, Outlet } from 'react-router-dom'
 
 // Import your logo/image
 import logo from '/img/iit-logo.svg' // adjust the path according to your folder structure
 
 function App() {
   return (
-    <BrowserRouter>
       <div className="min-h-screen">
         <header className="fixed top-0 left-0 right-0 z-10 h-16 border-b bg-white/70 backdrop-blur">
           <div className="max-w-7xl h-full px-4 md:px-12 mx-auto flex items-center justify-between">
@@ -43,16 +36,7 @@ function App() {
 
         <main className=" h-[calc(100vh-4rem-3rem)]">
           <div className="pt-16 md:mx-auto h-full">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/institutes" element={<BuildingsList />} />
-              <Route path="/institutes/:buildingId" element={<BuildingDetail />} />
-              <Route path="*" element={<div>Page not found</div>} />
-
-          <Route path="/common-guidelines" element={<CommonGuidelines />} />
-          <Route path="/roles-and-responsibilities" element={<Roles />} />
-          <Route path="/meet-the-team" element={<MeetTeam />} />
-            </Routes>
+            <Outlet /> {/* Child routes render here */}
           </div>
         </main>
 
@@ -62,7 +46,6 @@ function App() {
           </div>
         </footer>
       </div>
-    </BrowserRouter>
   )
 }
 
