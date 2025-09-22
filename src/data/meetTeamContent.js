@@ -9,7 +9,7 @@ export const meetTeamContent = [
     {
       type: "cover",
       title: "Dr. Ruvan Weerasinghe",
-      image: "/img/meet-team-book/user-icon.webp",
+      image: "/img/meet-team-book/Ruvan Weerasinghe.webp",
       email : "ruvan.w@iit.ac.lk",
       position : "Dean (Academic)"
     },
