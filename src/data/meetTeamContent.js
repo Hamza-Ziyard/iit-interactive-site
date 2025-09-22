@@ -24,7 +24,7 @@ export const meetTeamContent = [
     {
       type: "cover",
       title: "Guhanathan Poravi",
-      image: "/img/meet-team-book/user-icon.webp",
+      image: "/img/meet-team-book/Guhanathan Poravi.webp",
       email : "guhanathan.p@iit.ac.lk",
       position : "Module Leader - L4 ",
       module : "Software Development I "
