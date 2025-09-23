@@ -23,9 +23,9 @@ export const meetTeamContent = [
 
     {
       type: "cover",
-      title: "Guhanathan Poravi",
-      image: "/img/meet-team-book/Guhanathan Poravi.webp",
-      email : "guhanathan.p@iit.ac.lk",
+      title: "Suvetha Suvendran",
+      image: "/img/meet-team-book/Suvetha Suvendran.webp",
+      email : "suvetha.s@iit.ac.lk",
       position : "Module Leader - L4 ",
       module : "Software Development I "
     },
